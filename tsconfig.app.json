@@ -13,9 +13,10 @@
     "moduleDetection": "force",
     "outDir": "dist",
     "declaration": true,
-    "declarationDir": "dist",
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
     "noEmit": false,
+    "allowJs": true,             
+    "checkJs": false,
 
     /* Linting */
     "strict": true,
@@ -25,5 +26,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": [
+    "src",           // All files in src and subdirectories
+  ]
 }

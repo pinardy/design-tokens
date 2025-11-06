@@ -4,121 +4,121 @@
  */
 
 export const tokens = {
-  palette: {
-    yellow: {
-      '70': '#fbc02d',
-      '80': '#b39c00',
-      '90': '#826400',
-      '100': '#594500',
+  "palette": {
+    "yellow": {
+      "70": "#fbc02d",
+      "80": "#b39c00",
+      "90": "#826400",
+      "100": "#594500"
     },
-    green: {
-      '20': '#c8e6c9',
-      '30': '#66bb6a',
-      '40': '#388e3c',
+    "green": {
+      "20": "#c8e6c9",
+      "30": "#66bb6a",
+      "40": "#388e3c"
     },
-    blue: {
-      '20': '#bbdefb',
-      '30': '#63a4ff',
-      '40': '#1976d2',
+    "blue": {
+      "20": "#bbdefb",
+      "30": "#63a4ff",
+      "40": "#1976d2"
     },
-    red: {
-      '10': '#ffebee',
-      '20': '#ffcdd2',
-      '30': '#e57373',
-      '40': '#d32f2f',
-      '50': '#ef5350',
-      '60': '#e53935',
-      '70': '#d32f2f',
-      '80': '#c62828',
-      '90': '#b71c1c',
+    "red": {
+      "10": "#ffebee",
+      "20": "#ffcdd2",
+      "30": "#e57373",
+      "40": "#d32f2f",
+      "50": "#ef5350",
+      "60": "#e53935",
+      "70": "#d32f2f",
+      "80": "#c62828",
+      "90": "#b71c1c"
     },
-    grey: {
-      '10': '#f5f5f5',
-      '20': '#eeeeee',
-      '30': '#e0e0e0',
-      '40': '#bdbdbd',
-      '50': '#9e9e9e',
-      '60': '#757575',
-      '70': '#616161',
-      '80': '#424242',
-      '90': '#212121',
-    },
+    "grey": {
+      "10": "#f5f5f5",
+      "20": "#eeeeee",
+      "30": "#e0e0e0",
+      "40": "#bdbdbd",
+      "50": "#9e9e9e",
+      "60": "#757575",
+      "70": "#616161",
+      "80": "#424242",
+      "90": "#212121"
+    }
   },
-  typography: {
-    fontWeight: '800',
-    fontSize: '16px',
-    fontFamily: 'Arial Black',
+  "typography": {
+    "fontWeight": "800",
+    "fontSize": "16px",
+    "fontFamily": "Arial Black"
   },
-  button: {
-    contained: {
-      primary: {
-        bg: {
-          hover: '#594500',
-        },
-      },
+  "button": {
+    "contained": {
+      "primary": {
+        "bg": {
+          "hover": "#594500"
+        }
+      }
     },
-    ghost: {
-      color: '#212121',
-      background: '#9e9e9e',
-      '&:hover': {
-        background: '#f5f5f5',
-        color: '#e0e0e0',
+    "ghost": {
+      "color": "#212121",
+      "background": "#9e9e9e",
+      "&:hover": {
+        "background": "#f5f5f5",
+        "color": "#e0e0e0"
       },
-      '&:disabled': {
-        color: '#9e9e9e',
-      },
+      "&:disabled": {
+        "color": "#9e9e9e"
+      }
     },
-    danger: {
-      color: '#b71c1c',
-      background: '#ef5350',
-      '&:hover': {
-        background: '#ffebee',
-        color: '#e57373',
+    "danger": {
+      "color": "#b71c1c",
+      "background": "#ef5350",
+      "&:hover": {
+        "background": "#ffebee",
+        "color": "#e57373"
       },
-      '&:disabled': {
-        color: '#ef5350',
-      },
-    },
+      "&:disabled": {
+        "color": "#ef5350"
+      }
+    }
   },
-  cc: {
-    ref: {
-      palette: {
-        cyan: {
-          '20': '#83F3FF',
-          '30': '#3FE9FF',
-          '40': '#00DCFF',
+  "cc": {
+    "ref": {
+      "palette": {
+        "cyan": {
+          "20": "#83F3FF",
+          "30": "#3FE9FF",
+          "40": "#00DCFF"
         },
-        grey: {
-          '30': '#C2C2C2',
-          '35': '#B0B0B0',
-          '40': '#A3A3A3',
-          '70': '#525252',
-          '100': '#121212',
-          '00': '#FDFDFD',
+        "grey": {
+          "30": "#C2C2C2",
+          "35": "#B0B0B0",
+          "40": "#A3A3A3",
+          "70": "#525252",
+          "100": "#121212",
+          "00": "#FDFDFD"
         },
-        violet: {
-          '10': '#EAB8FF',
-          '20': '#D09CFF',
-          '30': '#B77FFF',
-          '40': '#7F00FF',
-        },
-      },
+        "violet": {
+          "10": "#EAB8FF",
+          "20": "#D09CFF",
+          "30": "#B77FFF",
+          "40": "#7F00FF"
+        }
+      }
     },
-    sem: {
-      colour: {
-        action: {
-          primary: '#00DCFF',
-          'primary-hovered': '#3FE9FF',
-          'primary-pressed': '#83F3FF',
-          disabled: '#FDFDFD',
+    "sem": {
+      "colour": {
+        "action": {
+          "primary": "#00DCFF",
+          "primary-hovered": "#3FE9FF",
+          "primary-pressed": "#83F3FF",
+          "disabled": "#FDFDFD"
         },
-        text: {
-          inverse: '#121212',
-          disabled: '#525252',
-        },
-      },
-    },
-  },
+        "text": {
+          "inverse": "#121212",
+          "disabled": "#525252"
+        }
+      }
+    }
+  }
 } as const;
 
 export type Tokens = typeof tokens;
