@@ -39,6 +39,12 @@ This command will generate the following files:
 
 The outputs are controlled and determined in `style-dictionary.config.json`. Modify this accordingly for your own project requirements.
 
+3. Build your application with:
+
+```sh
+npm run build
+```
+
 If you want to export the tokens for local development, run:
 
 ```sh
