@@ -1,7 +1,42 @@
-// import { tokens } from './tokens';
-// import { alpha, getContrastRatio } from '@mui/material/styles';
+import type { Components } from '@mui/material/styles';
+import { tokens } from './tokens';
+import { alpha } from '@mui/material/styles';
 
-// const { cc } = tokens;
+const { cc } = tokens;
+
+export const buttonStyleOverrides: Components['MuiButton'] = {
+  styleOverrides: {
+    root: {
+      fontWeight: '400',
+      fontSize: 14,
+      textTransform: 'capitalize',
+    },
+    contained: {
+      '&.Mui-disabled': {
+        color: alpha(cc.sem.colour.text.disabled, 0.38),
+        backgroundColor: alpha(cc.sem.colour.action.disabled, 0.12),
+      },
+    },
+    outlined: {
+      '&.Mui-active': {
+        color: cc.sem.colour.text.tertiary,
+        border: `1px solid ${cc.sem.colour.action.tertiary}`,
+      },
+      '&:hover': {
+        backgroundColor: alpha(cc.sem.colour.text.tertiary, 0.08),
+      },
+      '&.Mui-disabled': {
+        color: alpha(cc.sem.colour.text.tertiary, 0.38),
+        borderColor: alpha(cc.sem.colour.action.tertiary, 0.12),
+      },
+    },
+    text: {
+      '&.Mui-disabled': {
+        color: alpha(cc.sem.colour.text.disabled, 0.38),
+      },
+    },
+  },
+};
 
 // export const violetButtonOverrides = {
 //   outlined: {

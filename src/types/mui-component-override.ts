@@ -28,5 +28,4 @@ declare module '@mui/material/Chip' {
   }
 }
 
-// ✅ Add an export so TypeScript knows this is a module
 export {};
