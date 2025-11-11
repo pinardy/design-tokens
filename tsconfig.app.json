@@ -15,7 +15,7 @@
     "declaration": true,
     "emitDeclarationOnly": false,
     "noEmit": false,
-    "allowJs": true,             
+    "allowJs": true,
     "checkJs": false,
 
     /* Linting */
@@ -26,7 +26,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": [
-    "src",           // All files in src and subdirectories
-  ]
+  "include": ["src"]
 }
