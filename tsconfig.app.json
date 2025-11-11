@@ -13,9 +13,10 @@
     "moduleDetection": "force",
     "outDir": "dist",
     "declaration": true,
-    "declarationDir": "dist",
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
     "noEmit": false,
+    "allowJs": true,
+    "checkJs": false,
 
     /* Linting */
     "strict": true,

@@ -27,3 +27,5 @@ declare module '@mui/material/Chip' {
     violet: true;
   }
 }
+
+export {};
