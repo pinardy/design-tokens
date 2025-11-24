@@ -38,5 +38,5 @@ export type Tokens = typeof tokens;
   },
 });
 
-const sd = new StyleDictionary('./src/theme/style-dictionary.config.json');
+const sd = new StyleDictionary('./src/theme/style-dictionary.config.jsonc');
 sd.buildAllPlatforms();
