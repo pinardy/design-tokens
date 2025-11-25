@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "tsc --project tsconfig.app.json",
     "build:tokens": "ts-node src/theme/build-tokens.ts",
+    "prepack": "npm run build:tokens && npm run build",
     "lint": "eslint .",
     "format": "prettier --write .",
     "preview": "vite preview"
@@ -16,10 +17,10 @@
       "import": "./dist/theme/tokens.js",
       "require": "./dist/theme/tokens.js"
     },
-    "./customThemes": {
-      "types": "./dist/theme/customThemes.d.ts",
-      "import": "./dist/theme/customThemes.js",
-      "require": "./dist/theme/customThemes.js"
+    "./themeOptions": {
+      "types": "./dist/theme/themeOptions.d.ts",
+      "import": "./dist/theme/themeOptions.js",
+      "require": "./dist/theme/themeOptions.js"
     },
     "./styleOverrides": {
       "types": "./dist/theme/styleOverrides.d.ts",
