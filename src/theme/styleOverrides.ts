@@ -38,6 +38,39 @@ export const buttonStyleOverrides: Components['MuiButton'] = {
   },
 };
 
+export const checkboxStyleOverrides: Components['MuiCheckbox'] = {
+  styleOverrides: {
+    root: {
+      color: alpha(cc.sem.colour.action.secondary, 0.56),
+
+      '&.Mui-checked': {
+        color: cc.sem.colour.action.primary,
+      },
+
+      '&.Mui-disabled': {
+        color: alpha(cc.sem.colour.text.disabled, 0.38),
+        borderColor: alpha(cc.sem.colour.action.tertiary, 0.12),
+      },
+
+      '&:hover': {
+        backgroundColor: alpha(cc.sem.colour.action.primary, 0.08),
+      },
+    },
+  },
+};
+
+export const formControlLabelOverrides: Components['MuiFormControlLabel'] = {
+  styleOverrides: {
+    label: {
+      color: cc.sem.colour.text.tertiary, // ← your desired label colour
+
+      '&.Mui-disabled': {
+        color: alpha(cc.sem.colour.text.disabled, 0.38),
+      },
+    },
+  },
+};
+
 // export const violetButtonOverrides = {
 //   outlined: {
 //     '&.MuiButton-outlinedViolet': {

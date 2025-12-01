@@ -1,6 +1,10 @@
 import type { ThemeOptions } from '@mui/material/styles';
 import { tokens } from './tokens';
-import { buttonStyleOverrides } from './styleOverrides';
+import {
+  buttonStyleOverrides,
+  checkboxStyleOverrides,
+  formControlLabelOverrides,
+} from './styleOverrides';
 
 const { cc } = tokens;
 
@@ -17,6 +21,8 @@ export const lightThemeOptions: ThemeOptions = {
   },
   components: {
     MuiButton: buttonStyleOverrides,
+    MuiCheckbox: checkboxStyleOverrides,
+    MuiFormControlLabel: formControlLabelOverrides,
   },
 };
 
@@ -33,5 +39,7 @@ export const darkThemeOptions: ThemeOptions = {
   },
   components: {
     MuiButton: buttonStyleOverrides,
+    MuiCheckbox: checkboxStyleOverrides,
+    MuiFormControlLabel: formControlLabelOverrides,
   },
 };
