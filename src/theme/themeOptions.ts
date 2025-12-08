@@ -4,6 +4,10 @@ import {
   buttonStyleOverrides,
   checkboxStyleOverrides,
   formControlLabelOverrides,
+  radioGroupStyleOverrides,
+  radioStyleOverrides,
+  switchStyleOverrides,
+  textFieldStyleOverrides,
 } from './styleOverrides';
 
 const { cc } = tokens;
@@ -23,6 +27,10 @@ export const lightThemeOptions: ThemeOptions = {
     MuiButton: buttonStyleOverrides,
     MuiCheckbox: checkboxStyleOverrides,
     MuiFormControlLabel: formControlLabelOverrides,
+    MuiRadioGroup: radioGroupStyleOverrides,
+    MuiRadio: radioStyleOverrides,
+    MuiTextField: textFieldStyleOverrides,
+    MuiSwitch: switchStyleOverrides,
   },
 };
 
@@ -41,5 +49,9 @@ export const darkThemeOptions: ThemeOptions = {
     MuiButton: buttonStyleOverrides,
     MuiCheckbox: checkboxStyleOverrides,
     MuiFormControlLabel: formControlLabelOverrides,
+    MuiRadioGroup: radioGroupStyleOverrides,
+    MuiRadio: radioStyleOverrides,
+    MuiTextField: textFieldStyleOverrides,
+    MuiSwitch: switchStyleOverrides,
   },
 };

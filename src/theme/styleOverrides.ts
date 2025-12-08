@@ -71,6 +71,92 @@ export const formControlLabelOverrides: Components['MuiFormControlLabel'] = {
   },
 };
 
+export const radioGroupStyleOverrides: Components['MuiRadioGroup'] = {
+  styleOverrides: {
+    root: {
+      color: alpha(cc.sem.colour.action.secondary, 0.56),
+
+      '&.Mui-checked': {
+        color: cc.sem.colour.action.primary,
+      },
+
+      '&.Mui-disabled': {
+        color: alpha(cc.sem.colour.text.disabled, 0.38),
+        borderColor: alpha(cc.sem.colour.action.tertiary, 0.12),
+      },
+
+      '&:hover': {
+        backgroundColor: alpha(cc.sem.colour.action.primary, 0.08),
+      },
+    },
+  },
+};
+
+export const radioStyleOverrides: Components['MuiRadio'] = {
+  styleOverrides: {
+    root: {
+      color: alpha(cc.sem.colour.action.secondary, 0.56),
+
+      '&.Mui-checked': {
+        color: cc.sem.colour.action.primary,
+      },
+
+      '&.Mui-disabled': {
+        color: alpha(cc.sem.colour.text.disabled, 0.38),
+        borderColor: alpha(cc.sem.colour.action.tertiary, 0.12),
+      },
+
+      '&:hover': {
+        backgroundColor: alpha(cc.sem.colour.action.primary, 0.08),
+      },
+    },
+  },
+};
+
+export const textFieldStyleOverrides: Components['MuiTextField'] = {
+  styleOverrides: {
+    root: {
+      color: alpha(cc.sem.colour.action.tertiary, 0.23),
+
+      '&.Mui-disabled': {
+        color: alpha(cc.sem.colour.text.disabled, 0.38),
+        borderColor: alpha(cc.sem.colour.action.tertiary, 0.12),
+      },
+
+      '&:focused': {
+        color: cc.sem.colour.action.primary,
+      },
+    },
+  },
+};
+
+export const switchStyleOverrides: Components['MuiSwitch'] = {
+  styleOverrides: {
+    root: {
+      color: alpha(cc.sem.colour.action.tertiary, 0.23),
+
+      '&.Mui-disabled': {
+        color: alpha(cc.sem.colour.text.disabled, 0.38),
+        borderColor: alpha(cc.sem.colour.action.tertiary, 0.12),
+      },
+
+      '&:focus-visible': {
+        color: cc.sem.colour.action.primary,
+      },
+    },
+
+    track: {
+      backgroundColor: alpha(cc.sem.colour.action.tertiary, 0.14),
+      borderColor: alpha(cc.sem.colour.action.tertiary, 0.12),
+
+      // disabled
+      '.Mui-disabled &': {
+        backgroundColor: alpha(cc.sem.colour.action.disabled, 0.15),
+      },
+    },
+  },
+};
+
 // export const violetButtonOverrides = {
 //   outlined: {
 //     '&.MuiButton-outlinedViolet': {
