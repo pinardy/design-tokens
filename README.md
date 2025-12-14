@@ -4,6 +4,7 @@
 
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
+- [Developing Design Tokens](#developing-design-tokens)
 - [Interaction Overview](#interaction-overview)
 - [Material UI Theme Integration](#material-ui-theme-integration)
 - [Style Types Override](#style-types-override)
@@ -16,6 +17,12 @@ Design tokens are a way to store and manage visual design attributes (colors, ty
 In this project, [style-dictionary](https://styledictionary.com/getting-started/installation/) is used to generate the design tokens. Design tokens are defined in a JSONC format in `src/theme/tokens.jsonc` and transformed into TypeScript and CSS files for use in your application. This file is meant to be be shared among developers and UX designers as the single source of truth.
 
 ## Getting Started
+
+1. Install project dependencies with `npm i`.
+
+2. Run the storybook to view the MUI components using design tokens with `npm run storybook`.
+
+## Developing Design Tokens
 
 1. Install project dependencies with `npm i`.
 

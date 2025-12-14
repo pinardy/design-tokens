@@ -3,7 +3,6 @@
   "version": "0.0.1-ALPHA",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "tsc --project tsconfig.app.json",
     "build:tokens": "ts-node src/theme/build-tokens.ts",
     "prepack": "npm run build:tokens && npm run build",
