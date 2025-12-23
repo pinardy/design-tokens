@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import InputAdornment from '@mui/material/InputAdornment';
 
 import { lightThemeOptions, darkThemeOptions } from '../theme/themeOptions';
 
@@ -58,7 +59,7 @@ const ThemedTextFieldRow: React.FC<{ themeMode: 'light' | 'dark' }> = ({ themeMo
 
           {/* Disabled */}
           <TextField label="Disabled" disabled />
-
+        
           {/* Password */}
           <TextField label="Password" type="password" />
         </Stack>

@@ -1,5 +1,6 @@
 // src/ColourPaletteViewer.tsx
-import { tokens } from 'design-tokens/tokens';
+// import { tokens } from 'design-tokens/tokens';
+import { tokens } from '../theme/tokens';
 import React from 'react';
 
 const { cc } = tokens;

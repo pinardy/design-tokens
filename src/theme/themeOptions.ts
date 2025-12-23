@@ -43,7 +43,11 @@ export const darkThemeOptions: ThemeOptions = {
     error: { main: cc.ref.palette.red['300'] },
     warning: { main: cc.ref.palette.amber['300'] },
     info: { main: cc.ref.palette.blue['300'] },
-    background: { default: cc.ref.palette.black },
+    // background: { default: cc.ref.palette.black },
+    background: {
+      default: cc.ref.palette.black,
+      paper: cc.ref.palette.black,
+    },
   },
   components: {
     MuiButton: buttonStyleOverrides,
