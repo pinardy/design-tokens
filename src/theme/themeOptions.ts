@@ -8,11 +8,27 @@ import {
   radioStyleOverrides,
   switchStyleOverrides,
   textFieldStyleOverrides,
+  outlinedInputStyleOverrides,
+  inputLabelStyleOverrides,
+  formHelperTextOverrides,
+  inputAdornmentOverrides,
 } from './styleOverrides';
 
 const { cc } = tokens;
 
 export const lightThemeOptions: ThemeOptions = {
+  typography: {
+    body1: {
+      fontSize: '16px',   // label + field text
+      lineHeight: '140%',
+      fontWeight: 400,
+    },
+    caption: {
+      fontSize: '12px',   // helper text + adornment text
+      lineHeight: '140%',
+      fontWeight: 400,
+    },
+  },
   palette: {
     mode: 'light',
     primary: { main: cc.ref.palette.cyan['400'] },
@@ -29,12 +45,30 @@ export const lightThemeOptions: ThemeOptions = {
     MuiFormControlLabel: formControlLabelOverrides,
     MuiRadioGroup: radioGroupStyleOverrides,
     MuiRadio: radioStyleOverrides,
-    MuiTextField: textFieldStyleOverrides,
-    MuiSwitch: switchStyleOverrides,
+     MuiSwitch: switchStyleOverrides,
+
+    MuiTextField: textFieldStyleOverrides,             // wrapper (defaultProps: { variant: 'outlined' })
+    MuiOutlinedInput: outlinedInputStyleOverrides,     // border + input text
+    MuiInputLabel: inputLabelStyleOverrides,           // floating label
+    MuiFormHelperText: formHelperTextOverrides,        // helper text under field
+    MuiInputAdornment: inputAdornmentOverrides,        // "Kg", "$" etc.
+   
   },
 };
 
 export const darkThemeOptions: ThemeOptions = {
+  typography: {
+    body1: {
+      fontSize: '16px',   // label + field text
+      lineHeight: '140%',
+      fontWeight: 400,
+    },
+    caption: {
+      fontSize: '12px',   // helper text + adornment text
+      lineHeight: '140%',
+      fontWeight: 400,
+    },
+  },
   palette: {
     mode: 'dark',
     primary: { main: cc.ref.palette.cyan['300'] },
@@ -55,7 +89,12 @@ export const darkThemeOptions: ThemeOptions = {
     MuiFormControlLabel: formControlLabelOverrides,
     MuiRadioGroup: radioGroupStyleOverrides,
     MuiRadio: radioStyleOverrides,
-    MuiTextField: textFieldStyleOverrides,
     MuiSwitch: switchStyleOverrides,
+
+    MuiTextField: textFieldStyleOverrides,
+    MuiOutlinedInput: outlinedInputStyleOverrides,
+    MuiInputLabel: inputLabelStyleOverrides,
+    MuiFormHelperText: formHelperTextOverrides,
+    MuiInputAdornment: inputAdornmentOverrides,
   },
 };

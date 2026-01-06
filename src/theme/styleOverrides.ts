@@ -56,17 +56,6 @@ export const checkboxStyleOverrides: Components['MuiCheckbox'] = {
   },
 };
 
-// export const formControlLabelOverrides: Components['MuiFormControlLabel'] = {
-//   styleOverrides: {
-//     label: {
-//       color: cc.sem.colour.text.tertiary,
-//       '&.Mui-disabled': {
-//         color: alpha(cc.sem.colour.text.disabled, 0.38),
-//       },
-//     },
-//   },
-// };
-
 export const formControlLabelOverrides: Components['MuiFormControlLabel'] = {
   styleOverrides: {
     label: {
@@ -118,41 +107,114 @@ export const radioStyleOverrides: Components['MuiRadio'] = {
 };
 
 export const textFieldStyleOverrides: Components['MuiTextField'] = {
+  defaultProps: {
+    variant: 'outlined',
+  },
+};
+export const outlinedInputStyleOverrides: Components['MuiOutlinedInput'] = {
   styleOverrides: {
     root: {
-      color: alpha(cc.sem.colour.action.tertiary, 0.23),
-      '&.Mui-disabled': {
-        color: alpha(cc.sem.colour.text.disabled, 0.38),
-        borderColor: alpha(cc.sem.colour.action.tertiary, 0.12),
+      // Enabled border
+      '& .MuiOutlinedInput-notchedOutline': {
+        borderColor: alpha(cc.ref.palette.grey['00'], 0.23),
       },
-      '&:focused': {
-        color: cc.sem.colour.action.primary,
+
+      // Hovered border
+      '&:hover .MuiOutlinedInput-notchedOutline': {
+        borderColor: cc.ref.palette.grey['00'],
+      },
+
+      // Focused border
+      '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+        borderColor: cc.ref.palette.cyan['400'],
+      },
+
+      // Disabled border
+      '&.Mui-disabled .MuiOutlinedInput-notchedOutline': {
+        borderColor: alpha(cc.ref.palette.grey['00'], 0.23),
+        WebkitTextFillColor: alpha(cc.ref.palette.grey['00'], 0.38),
+      },
+
+      // Error border
+      '&.Mui-error .MuiOutlinedInput-notchedOutline': {
+        borderColor: cc.ref.palette.red['400'],
+      },
+    },
+
+    // The actual text in the input
+    input: {
+      color: cc.ref.palette.grey['00'],
+
+      // Has value: False → placeholder
+      '::placeholder': {
+        color: alpha(cc.ref.palette.grey['00'], 0.7),
+        opacity: 1,
+      },
+
+      // Disabled text
+      '&.Mui-disabled': {
+        color: alpha(cc.ref.palette.grey['00'], 0.38),
+      },
+    },
+  },
+};
+export const inputLabelStyleOverrides: Components['MuiInputLabel'] = {
+  styleOverrides: {
+    root: {
+      // Enabled label
+      color: alpha(cc.ref.palette.grey['00'], 0.7),
+
+      // Focused label
+      '&.Mui-focused': {
+        color: cc.ref.palette.cyan['400'],
+      },
+
+      // Error label
+      '&.Mui-error': {
+        color: cc.ref.palette.red['400'],
+      },
+
+      // Disabled label
+      '&.Mui-disabled': {
+        color: alpha(cc.ref.palette.grey['00'], 0.38),
+      },
+    },
+  },
+};
+export const formHelperTextOverrides: Components['MuiFormHelperText'] = {
+  styleOverrides: {
+    root: {
+      // Enabled / Focused / Hovered helper text
+      color: alpha(cc.ref.palette.grey['00'], 0.7),
+
+      // Error helper text
+      '&.Mui-error': {
+        color: cc.ref.palette.red['400'],
+      },
+
+      // Disabled helper text
+      '&.Mui-disabled': {
+        color: alpha(cc.ref.palette.grey['00'], 0.38),
+      },
+    },
+  },
+};
+export const inputAdornmentOverrides: Components['MuiInputAdornment'] = {
+  styleOverrides: {
+    root: {
+      // Enabled / Focused / Hovered / Error
+      // text/secondary
+      color: alpha(cc.ref.palette.grey['00'], 0.7),
+
+      // Disabled
+      '&.Mui-disabled': {
+        // text/disabled
+        color: alpha(cc.ref.palette.grey['00'], 0.38),
       },
     },
   },
 };
 
-// export const switchStyleOverrides: Components['MuiSwitch'] = {
-//   styleOverrides: {
-//     root: {
-//       color: alpha(cc.sem.colour.action.tertiary, 0.23),
-//       '&.Mui-disabled': {
-//         color: alpha(cc.sem.colour.text.disabled, 0.38),
-//         borderColor: alpha(cc.sem.colour.action.tertiary, 0.12),
-//       },
-//       '&:focus-visible': {
-//         color: cc.sem.colour.action.primary,
-//       },
-//     },
-//     track: {
-//       backgroundColor: alpha(cc.sem.colour.action.tertiary, 0.14),
-//       borderColor: alpha(cc.sem.colour.action.tertiary, 0.12),
-//       '.Mui-disabled &': {
-//         backgroundColor: alpha(cc.sem.colour.action.disabled, 0.15),
-//       },
-//     },
-//   },
-// };
 export const switchStyleOverrides: Components['MuiSwitch'] = {
   // defaultProps: {
   //   disableRipple: true,
@@ -169,7 +231,6 @@ export const switchStyleOverrides: Components['MuiSwitch'] = {
     },
     switchBase: { 
       // unchecked state
-      // color: cc.ref.palette.grey['300'],
       '&:hover': {
         backgroundColor: alpha(cc.ref.palette.grey['00'], 0.08),
       },
