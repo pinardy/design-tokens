@@ -203,11 +203,10 @@ export const inputAdornmentOverrides: Components['MuiInputAdornment'] = {
   styleOverrides: {
     root: {
       // Enabled / Focused / Hovered / Error
-      // text/secondary
       color: alpha(cc.ref.palette.grey['00'], 0.7),
 
       // Disabled
-      '&.Mui-disabled': {
+      '.MuiInputBase-root.Mui-disabled &': {
         // text/disabled
         color: alpha(cc.ref.palette.grey['00'], 0.38),
       },

@@ -111,7 +111,7 @@ const ThemedTextFieldRow: React.FC<{ themeMode: 'light' | 'dark' }> = ({ themeMo
               slotProps={{
                 input: {
                   startAdornment: (
-                    <InputAdornment position="start">Kg</InputAdornment>
+                    <InputAdornment position="start" disableTypography>Kg</InputAdornment>
                   ),
                 },
               }}
