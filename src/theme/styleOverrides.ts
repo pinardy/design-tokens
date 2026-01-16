@@ -100,7 +100,7 @@ export const radioStyleOverrides: Components['MuiRadio'] = {
         borderColor: alpha(cc.sem.colour.action.tertiary, 0.12),
       },
       '&:hover': {
-        backgroundColor: alpha(cc.sem.colour.action.primary, 0.08),
+        backgroundColor: alpha(cc.sem.colour.action.primary, 0.0),
       },
     },
   },
@@ -274,4 +274,54 @@ export const switchStyleOverrides: Components['MuiSwitch'] = {
     },
   },
 };
+
+export const tabStyleOverrides: Components['MuiTab'] = {
+  styleOverrides: {
+    root: ({ ownerState }) => {
+      const intent = ownerState.textColor;
+      const isPrimary = intent === 'primary';
+
+      // Override colour regardless of light or dark theme
+      const activeColor = isPrimary
+        ? cc.ref.palette.cyan['400']
+        : cc.ref.palette.grey['400'];
+
+      return {
+        // Inactive state
+        color: alpha(cc.ref.palette.grey['00'], 0.7),
+
+        '&.Mui-disabled': {
+          color: alpha(cc.ref.palette.grey['00'], 0.38),
+          // opacity: 1,
+        },
+
+        '& .MuiTab-iconWrapper': {
+          color: 'inherit',
+        },
+
+        '&:not(.Mui-selected)': {
+          '&.Mui-focusVisible, &:active': {
+            backgroundColor: alpha(cc.ref.palette.grey['00'], 0.3),
+          },
+        },
+
+        // Active
+        '&.Mui-selected': {
+          color: activeColor,
+
+          '&.Mui-focusVisible': {
+            backgroundColor: alpha(activeColor, 0.09),
+          },
+
+          '&:active': {
+            backgroundColor: alpha(activeColor, 0.3),
+          },
+        },
+      };
+    },
+  },
+};
+
+
+
 
