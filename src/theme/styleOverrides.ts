@@ -322,6 +322,37 @@ export const tabStyleOverrides: Components['MuiTab'] = {
   },
 };
 
+export const menuStyleOverrides: Components['MuiMenu'] = {
+  styleOverrides: {
+    paper: {
+      // Select dropdown menu background
+      backgroundColor: '#2E2E2E',
+    },
+  },
+};
+
+export const selectStyleOverrides: Components['MuiSelect'] = {
+  styleOverrides: {
+    root: {
+      color: alpha(cc.ref.palette.grey['00'], 0.70),
+
+      // chevron icon colour
+      '& .MuiSelect-icon': {
+        color: alpha(cc.ref.palette.grey['00'], 0.56),
+      },
+
+      // disabled state
+      '&.Mui-disabled': {
+        color: alpha(cc.ref.palette.grey['00'], 0.38),
+
+        '& .MuiSelect-icon': {
+          color: alpha(cc.ref.palette.grey['00'], 0.38),
+        },
+      },
+    },
+  },
+};
+
 
 
 
