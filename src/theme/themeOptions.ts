@@ -13,6 +13,7 @@ import {
   formHelperTextOverrides,
   inputAdornmentOverrides,
   selectStyleOverrides,
+  menuItemStyleOverrides,
   menuStyleOverrides,
   tabStyleOverrides,
 } from './styleOverrides';
@@ -55,6 +56,7 @@ export const lightThemeOptions: ThemeOptions = {
     MuiInputLabel: inputLabelStyleOverrides,           // floating label
     MuiFormHelperText: formHelperTextOverrides,        // helper text under field
     MuiInputAdornment: inputAdornmentOverrides,        // "Kg", "$" etc.
+    MuiMenuItem: menuItemStyleOverrides,
     MuiMenu : menuStyleOverrides,
     MuiSelect: selectStyleOverrides,
     MuiTab: tabStyleOverrides,
@@ -101,6 +103,7 @@ export const darkThemeOptions: ThemeOptions = {
     MuiInputLabel: inputLabelStyleOverrides,
     MuiFormHelperText: formHelperTextOverrides,
     MuiInputAdornment: inputAdornmentOverrides,
+    MuiMenuItem: menuItemStyleOverrides,
     MuiMenu : menuStyleOverrides,
     MuiSelect: selectStyleOverrides,
     MuiTab: tabStyleOverrides,

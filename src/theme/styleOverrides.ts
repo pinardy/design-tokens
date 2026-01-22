@@ -353,6 +353,32 @@ export const selectStyleOverrides: Components['MuiSelect'] = {
   },
 };
 
+export const menuItemStyleOverrides: Components['MuiMenuItem'] = {
+  styleOverrides: {
+    root: {
+      color: cc.ref.palette.grey['00'],
+      fontSize: 14,
+
+      '&:hover': {
+        backgroundColor: alpha(cc.ref.palette.grey['00'], 0.08),
+      },
+
+      '&.Mui-selected': {
+        backgroundColor: alpha(cc.ref.palette.cyan['400'], 0.08),
+
+        '&:hover': {
+          backgroundColor: alpha(cc.ref.palette.cyan['400'], 0.08),
+        },
+      },
+
+      '&.Mui-disabled': {
+        color: alpha(cc.ref.palette.grey['00'], 0.38),
+      },
+    },
+  },
+};
+
+
 
 
 
