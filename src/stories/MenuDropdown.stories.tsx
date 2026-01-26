@@ -58,30 +58,28 @@ const ThemedMenuItems: React.FC<{ themeMode: 'light' | 'dark' }> = ({ themeMode 
                     <MenuItem disabled>Disabled</MenuItem>
                 </Stack>
 
-                <Paper>
-                    <MenuList>
-                        <MenuItem
-                            selected={clickState0}
-                            onClick={() => Setclick0(prev => !prev)}
-                        >
-                            Menu Item
-                        </MenuItem>
-                        <MenuItem
-                            selected={clickState1}
-                            onClick={() => Setclick1(prev => !prev)}
-                        >
-                            Menu Item
-                        </MenuItem>
-                        <MenuItem
-                            selected={clickState2}
-                            onClick={() => Setclick2(prev => !prev)}
-                        >
-                            Menu Item
-                        </MenuItem>
-                        <MenuItem disabled>Disabled Item</MenuItem>
-                        <MenuItem disabled>Disabled Item</MenuItem>
-                    </MenuList>
-                </Paper>
+                <MenuList>
+                    <MenuItem
+                        selected={clickState0}
+                        onClick={() => Setclick0(prev => !prev)}
+                    >
+                        Menu Item
+                    </MenuItem>
+                    <MenuItem
+                        selected={clickState1}
+                        onClick={() => Setclick1(prev => !prev)}
+                    >
+                        Menu Item
+                    </MenuItem>
+                    <MenuItem
+                        selected={clickState2}
+                        onClick={() => Setclick2(prev => !prev)}
+                    >
+                        Menu Item
+                    </MenuItem>
+                    <MenuItem disabled>Disabled Item</MenuItem>
+                    <MenuItem disabled>Disabled Item</MenuItem>
+                </MenuList>
             </Box>
         </ThemeProvider>
     );
