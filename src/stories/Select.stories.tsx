@@ -43,7 +43,6 @@ const ThemedSelectRow: React.FC<{
     <ThemeProvider theme={theme}>
       <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', mt: 4 }}>
         <Stack direction="column" spacing={6}>
-
           <Stack direction="row" spacing={10} alignItems="flex-start">
             <Stack spacing={2}>
               <Box sx={{ height: 24, display: 'flex', alignItems: 'center' }}>
@@ -64,7 +63,7 @@ const ThemedSelectRow: React.FC<{
               </Box>
               <FormControl sx={{ minWidth: 240 }}>
                 <InputLabel shrink={false}>Label</InputLabel>
-                <Select displayEmpty renderValue={() => 'Label'} />
+                <Select displayEmpty/>
                 <Box sx={{ minHeight: 24 }}>
                   {displayHelperText && <FormHelperText>Helper text</FormHelperText>}
                 </Box>
@@ -90,7 +89,7 @@ const ThemedSelectRow: React.FC<{
               <Box sx={{ height: 24 }} />
               <FormControl disabled sx={{ minWidth: 240 }}>
                 <InputLabel shrink={false}>Label</InputLabel>
-                <Select displayEmpty renderValue={() => 'Label'} />
+                <Select displayEmpty/>
                 <Box sx={{ minHeight: 24 }}>
                   {displayHelperText && <FormHelperText>Helper text</FormHelperText>}
                 </Box>
@@ -116,14 +115,13 @@ const ThemedSelectRow: React.FC<{
               <Box sx={{ height: 24 }} />
               <FormControl error sx={{ minWidth: 240 }}>
                 <InputLabel shrink={false}>Label</InputLabel>
-                <Select displayEmpty renderValue={() => 'Label'} />
+                <Select displayEmpty/>
                 <Box sx={{ minHeight: 24 }}>
                   {displayHelperText && <FormHelperText>Helper text</FormHelperText>}
                 </Box>
               </FormControl>
             </Stack>
           </Stack>
-
         </Stack>
       </Box>
     </ThemeProvider>
@@ -136,12 +134,9 @@ const ThemedSelectRow: React.FC<{
 
 export const Selections: Story = {
   args: {
-    displayHelperText: true,
+    displayHelperText: false,
   },
   render: (args) => (
-    <ThemedSelectRow
-      themeMode={args.themeMode!}
-      displayHelperText={args.displayHelperText!}
-    />
+    <ThemedSelectRow themeMode={args.themeMode!} displayHelperText={args.displayHelperText!} />
   ),
 };

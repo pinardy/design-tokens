@@ -16,6 +16,7 @@ import {
   menuItemStyleOverrides,
   menuStyleOverrides,
   tabStyleOverrides,
+  toolTipOverrides
 } from './styleOverrides';
 
 const { cc } = tokens;
@@ -60,6 +61,7 @@ export const lightThemeOptions: ThemeOptions = {
     MuiMenu : menuStyleOverrides,
     MuiSelect: selectStyleOverrides,
     MuiTab: tabStyleOverrides,
+    MuiTooltip: toolTipOverrides
   },
 };
 
@@ -107,6 +109,7 @@ export const darkThemeOptions: ThemeOptions = {
     MuiMenu : menuStyleOverrides,
     MuiSelect: selectStyleOverrides,
     MuiTab: tabStyleOverrides,
+    MuiTooltip: toolTipOverrides
 
   },
 };

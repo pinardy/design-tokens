@@ -378,7 +378,13 @@ export const menuItemStyleOverrides: Components['MuiMenuItem'] = {
   },
 };
 
-
+export const toolTipOverrides : Components['MuiTooltip'] = {
+  styleOverrides: {
+    tooltip: {
+      color: cc.ref.palette.grey['00'],
+    },
+  },
+};
 
 
 
