@@ -242,6 +242,17 @@
           "accent": { "value": "{cc.ref.palette.cyan.400}" },
           "tertiary": { "value": "{cc.ref.palette.grey.00}" },
         },
+        "background":
+        {
+          "tooltip": {"value" : "#616161"}
+        },
+        "paper":
+        {
+          "elevation":
+          {
+            "06": {"value" : "#2E2E2E"}
+          }
+        },
       },
     },
     // "button": {

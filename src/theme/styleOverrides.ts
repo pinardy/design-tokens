@@ -326,7 +326,7 @@ export const menuStyleOverrides: Components['MuiMenu'] = {
   styleOverrides: {
     paper: {
       // Select dropdown menu background
-      backgroundColor: '#2E2E2E',
+      backgroundColor: cc.sem.colour.paper.elevation["06"],
     },
   },
 };
@@ -381,6 +381,7 @@ export const menuItemStyleOverrides: Components['MuiMenuItem'] = {
 export const toolTipOverrides : Components['MuiTooltip'] = {
   styleOverrides: {
     tooltip: {
+      backgroundColor: alpha(cc.sem.colour.background.tooltip, 0.9),
       color: cc.ref.palette.grey['00'],
     },
   },
