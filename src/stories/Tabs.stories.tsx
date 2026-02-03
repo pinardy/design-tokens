@@ -8,12 +8,10 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import { lightThemeOptions, darkThemeOptions } from '../theme/themeOptions';
 
-
 type TabStoryProps = {
   themeMode?: 'light' | 'dark';
   intent?: 'primary' | 'secondary' | undefined;
 };
-
 
 const meta: Meta<TabStoryProps> = {
   title: 'Overall/Tabs',
@@ -63,12 +61,7 @@ const ThemedTabsRow: React.FC<{
     switch (variant) {
       case 'icon-text':
         return (
-          <Tabs
-            value={1}
-            onChange={() => {}}
-            textColor={intent}
-            indicatorColor={intent}
-          >
+          <Tabs value={1} onChange={() => {}} textColor={intent} indicatorColor={intent}>
             <Tab icon={<PlaceholderIcon />} autoFocus label="Inactive" iconPosition="top" />
             <Tab icon={<PlaceholderIcon />} label="Active" iconPosition="top" />
             <Tab icon={<PlaceholderIcon />} label="Disabled" disabled iconPosition="top" />
@@ -77,12 +70,7 @@ const ThemedTabsRow: React.FC<{
 
       case 'text-only':
         return (
-          <Tabs
-            value={1}
-            onChange={() => {}}
-            textColor={intent}
-            indicatorColor={intent}
-          >
+          <Tabs value={1} onChange={() => {}} textColor={intent} indicatorColor={intent}>
             <Tab autoFocus label="Inactive" />
             <Tab label="Active" />
             <Tab label="Disabled" disabled />
@@ -91,12 +79,7 @@ const ThemedTabsRow: React.FC<{
 
       case 'icon-only':
         return (
-          <Tabs
-            value={1}
-            onChange={() => {}}
-            textColor={intent}
-            indicatorColor={intent}
-          >
+          <Tabs value={1} onChange={() => {}} textColor={intent} indicatorColor={intent}>
             <Tab icon={<PlaceholderIcon />} autoFocus aria-label="inactive" />
             <Tab icon={<PlaceholderIcon />} aria-label="active" />
             <Tab icon={<PlaceholderIcon />} disabled aria-label="disabled" />
@@ -105,12 +88,7 @@ const ThemedTabsRow: React.FC<{
 
       case 'no-text':
         return (
-          <Tabs
-            value={1}
-            onChange={() => {}}
-            textColor={intent}
-            indicatorColor={intent}
-          >
+          <Tabs value={1} onChange={() => {}} textColor={intent} indicatorColor={intent}>
             <Tab autoFocus aria-label="inactive" />
             <Tab aria-label="active" />
             <Tab disabled aria-label="disabled" />

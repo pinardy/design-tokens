@@ -218,7 +218,7 @@ export const switchStyleOverrides: Components['MuiSwitch'] = {
   // defaultProps: {
   //   disableRipple: true,
   // },
-  styleOverrides: {  
+  styleOverrides: {
     //knob (Unchecked state)
     thumb: {
       backgroundColor: cc.ref.palette.grey['300'],
@@ -228,7 +228,7 @@ export const switchStyleOverrides: Components['MuiSwitch'] = {
       backgroundColor: alpha(cc.ref.palette.grey['00'], 0.14),
       opacity: 1,
     },
-    switchBase: { 
+    switchBase: {
       // unchecked state
       '&:hover': {
         backgroundColor: alpha(cc.ref.palette.grey['00'], 0.08),
@@ -282,9 +282,7 @@ export const tabStyleOverrides: Components['MuiTab'] = {
       const isPrimary = intent === 'primary';
 
       // Override colour regardless of light or dark theme
-      const activeColor = isPrimary
-        ? cc.ref.palette.cyan['400']
-        : cc.ref.palette.grey['400'];
+      const activeColor = isPrimary ? cc.ref.palette.cyan['400'] : cc.ref.palette.grey['400'];
 
       return {
         // Inactive state
@@ -326,7 +324,7 @@ export const menuStyleOverrides: Components['MuiMenu'] = {
   styleOverrides: {
     paper: {
       // Select dropdown menu background
-      backgroundColor: cc.sem.colour.paper.elevation["06"],
+      backgroundColor: cc.sem.colour.paper.elevation['06'],
     },
   },
 };
@@ -334,7 +332,7 @@ export const menuStyleOverrides: Components['MuiMenu'] = {
 export const selectStyleOverrides: Components['MuiSelect'] = {
   styleOverrides: {
     root: {
-      color: alpha(cc.ref.palette.grey['00'], 0.70),
+      color: alpha(cc.ref.palette.grey['00'], 0.7),
 
       // chevron icon colour
       '& .MuiSelect-icon': {
@@ -378,7 +376,7 @@ export const menuItemStyleOverrides: Components['MuiMenuItem'] = {
   },
 };
 
-export const toolTipOverrides : Components['MuiTooltip'] = {
+export const toolTipOverrides: Components['MuiTooltip'] = {
   styleOverrides: {
     tooltip: {
       backgroundColor: alpha(cc.sem.colour.background.tooltip, 0.9),
@@ -386,6 +384,3 @@ export const toolTipOverrides : Components['MuiTooltip'] = {
     },
   },
 };
-
-
-

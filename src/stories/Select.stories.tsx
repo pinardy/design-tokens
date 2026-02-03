@@ -63,7 +63,7 @@ const ThemedSelectRow: React.FC<{
               </Box>
               <FormControl sx={{ minWidth: 240 }}>
                 <InputLabel shrink={false}>Label</InputLabel>
-                <Select displayEmpty/>
+                <Select displayEmpty />
                 <Box sx={{ minHeight: 24 }}>
                   {displayHelperText && <FormHelperText>Helper text</FormHelperText>}
                 </Box>
@@ -89,7 +89,7 @@ const ThemedSelectRow: React.FC<{
               <Box sx={{ height: 24 }} />
               <FormControl disabled sx={{ minWidth: 240 }}>
                 <InputLabel shrink={false}>Label</InputLabel>
-                <Select displayEmpty/>
+                <Select displayEmpty />
                 <Box sx={{ minHeight: 24 }}>
                   {displayHelperText && <FormHelperText>Helper text</FormHelperText>}
                 </Box>
@@ -115,7 +115,7 @@ const ThemedSelectRow: React.FC<{
               <Box sx={{ height: 24 }} />
               <FormControl error sx={{ minWidth: 240 }}>
                 <InputLabel shrink={false}>Label</InputLabel>
-                <Select displayEmpty/>
+                <Select displayEmpty />
                 <Box sx={{ minHeight: 24 }}>
                   {displayHelperText && <FormHelperText>Helper text</FormHelperText>}
                 </Box>

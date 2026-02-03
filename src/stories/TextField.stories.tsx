@@ -48,182 +48,155 @@ const ThemedTextFieldRow: React.FC<{ themeMode: 'light' | 'dark' }> = ({ themeMo
         }}
       >
         <Stack direction="column" spacing={4}>
-        {/* Row 1 – Enabled */}
-        <Stack direction="row" spacing={10} alignItems="flex-start">
-          {/* Has Value: True */}
-          <Stack spacing={2}>
-            <Box sx={{ color: 'grey.300', fontSize: 14 }}>Has Value: True</Box>
-            <TextField label="Label" defaultValue="Value" />
+          {/* Row 1 – Enabled */}
+          <Stack direction="row" spacing={10} alignItems="flex-start">
+            {/* Has Value: True */}
+            <Stack spacing={2}>
+              <Box sx={{ color: 'grey.300', fontSize: 14 }}>Has Value: True</Box>
+              <TextField label="Label" defaultValue="Value" />
+            </Stack>
+
+            {/* Has Value: False */}
+            <Stack spacing={2}>
+              <Box sx={{ color: 'grey.300', fontSize: 14 }}>Has Value: False</Box>
+              <TextField label="Label" />
+            </Stack>
+
+            {/* Input Adornments */}
+            <Stack spacing={2}>
+              <Box sx={{ color: 'grey.300', fontSize: 14 }}>Input Adornments</Box>
+              <TextField
+                label="Label"
+                slotProps={{
+                  input: {
+                    startAdornment: <InputAdornment position="start">Kg</InputAdornment>,
+                  },
+                }}
+              />
+              <TextField
+                label="Label"
+                slotProps={{
+                  input: {
+                    endAdornment: <InputAdornment position="end">Kg</InputAdornment>,
+                  },
+                }}
+              />
+            </Stack>
           </Stack>
 
-          {/* Has Value: False */}
-          <Stack spacing={2}>
-            <Box sx={{ color: 'grey.300', fontSize: 14 }}>Has Value: False</Box>
-            <TextField label="Label" />
+          {/* Row 2 – Disabled */}
+          <Stack direction="row" spacing={10} alignItems="flex-start">
+            {/* Has Value: True – Disabled */}
+            <Stack spacing={2}>
+              <Box sx={{ color: 'grey.300', fontSize: 14 }}>Has Value: True – Disabled</Box>
+              <TextField label="Label" defaultValue="Value" disabled />
+            </Stack>
+
+            {/* Has Value: False – Disabled */}
+            <Stack spacing={2}>
+              <Box sx={{ color: 'grey.300', fontSize: 14 }}>Has Value: False – Disabled</Box>
+              <TextField label="Label" disabled />
+            </Stack>
+
+            {/* Input Adornments – Disabled */}
+            <Stack spacing={2}>
+              <Box sx={{ color: 'grey.300', fontSize: 14 }}>Input Adornments – Disabled</Box>
+              <TextField
+                label="Label"
+                disabled
+                slotProps={{
+                  input: {
+                    startAdornment: (
+                      <InputAdornment position="start" disableTypography>
+                        Kg
+                      </InputAdornment>
+                    ),
+                  },
+                }}
+              />
+            </Stack>
           </Stack>
 
-          {/* Input Adornments */}
-          <Stack spacing={2}>
-            <Box sx={{ color: 'grey.300', fontSize: 14 }}>Input Adornments</Box>
-            <TextField
-              label="Label"
-              slotProps={{
-                input: {
-                  startAdornment: (
-                    <InputAdornment position="start">Kg</InputAdornment>
-                  ),
-                },
-              }}
-            />
-            <TextField
-              label="Label"
-              slotProps={{
-                input: {
-                  endAdornment: (
-                    <InputAdornment position="end">Kg</InputAdornment>
-                  ),
-                },
-              }}
-            />
+          {/* Row 3 – Error (NO helper text) */}
+          <Stack direction="row" spacing={10} alignItems="flex-start">
+            {/* Has Value: True – Error */}
+            <Stack spacing={2}>
+              <Box sx={{ color: 'grey.300', fontSize: 14 }}>Has Value: True – Error</Box>
+              <TextField label="Label" defaultValue="Value" error />
+            </Stack>
+
+            {/* Has Value: False – Error */}
+            <Stack spacing={2}>
+              <Box sx={{ color: 'grey.300', fontSize: 14 }}>Has Value: False – Error</Box>
+              <TextField label="Label" error />
+            </Stack>
+
+            {/* Input Adornments – Error */}
+            <Stack spacing={2}>
+              <Box sx={{ color: 'grey.300', fontSize: 14 }}>Input Adornments – Error</Box>
+              <TextField
+                label="Label"
+                error
+                slotProps={{
+                  input: {
+                    startAdornment: <InputAdornment position="start">Kg</InputAdornment>,
+                  },
+                }}
+              />
+              {/* Error + suffix */}
+              <TextField
+                label="Label"
+                error
+                slotProps={{
+                  input: {
+                    endAdornment: <InputAdornment position="end">Kg</InputAdornment>,
+                  },
+                }}
+              />
+            </Stack>
+          </Stack>
+
+          {/* Row 4 – Error + Helper (bottom rows of PDF) */}
+          <Stack direction="row" spacing={10} alignItems="flex-start">
+            {/* Has Value: True – Error + helper */}
+            <Stack spacing={2}>
+              <Box sx={{ color: 'grey.300', fontSize: 14 }}>Has Value: True – Error</Box>
+              <TextField label="Label" defaultValue="Value" error helperText="Helper text" />
+            </Stack>
+
+            {/* Has Value: False – Error + helper */}
+            <Stack spacing={2}>
+              <Box sx={{ color: 'grey.300', fontSize: 14 }}>Has Value: False – Error</Box>
+              <TextField label="Label" error helperText="Helper text" />
+            </Stack>
+
+            {/* Input Adornments – Error + helper */}
+            <Stack spacing={2}>
+              <Box sx={{ color: 'grey.300', fontSize: 14 }}>Input Adornments – Error</Box>
+              <TextField
+                label="Label"
+                error
+                helperText="Helper text"
+                slotProps={{
+                  input: {
+                    startAdornment: <InputAdornment position="start">Kg</InputAdornment>,
+                  },
+                }}
+              />
+              {/* Error + helper + suffix */}
+              <TextField
+                label="Label"
+                error
+                helperText="Helper text"
+                slotProps={{
+                  input: {
+                    endAdornment: <InputAdornment position="end">Kg</InputAdornment>,
+                  },
+                }}
+              />
+            </Stack>
           </Stack>
         </Stack>
-        
-        {/* Row 2 – Disabled */}
-        <Stack direction="row" spacing={10} alignItems="flex-start">
-          {/* Has Value: True – Disabled */}
-          <Stack spacing={2}>
-            <Box sx={{ color: 'grey.300', fontSize: 14 }}>Has Value: True – Disabled</Box>
-            <TextField label="Label" defaultValue="Value" disabled />
-          </Stack>
-
-          {/* Has Value: False – Disabled */}
-          <Stack spacing={2}>
-            <Box sx={{ color: 'grey.300', fontSize: 14 }}>Has Value: False – Disabled</Box>
-            <TextField label="Label" disabled />
-          </Stack>
-
-          {/* Input Adornments – Disabled */}
-          <Stack spacing={2}>
-            <Box sx={{ color: 'grey.300', fontSize: 14 }}>Input Adornments – Disabled</Box>
-            <TextField
-              label="Label"
-              disabled
-              slotProps={{
-                input: {
-                  startAdornment: (
-                    <InputAdornment position="start" disableTypography>Kg</InputAdornment>
-                  ),
-                },
-              }}
-            />
-          </Stack>
-        </Stack>
-
-        {/* Row 3 – Error (NO helper text) */}
-        <Stack direction="row" spacing={10} alignItems="flex-start">
-          {/* Has Value: True – Error */}
-          <Stack spacing={2}>
-            <Box sx={{ color: 'grey.300', fontSize: 14 }}>Has Value: True – Error</Box>
-            <TextField
-              label="Label"
-              defaultValue="Value"
-              error
-            />
-          </Stack>
-
-          {/* Has Value: False – Error */}
-          <Stack spacing={2}>
-            <Box sx={{ color: 'grey.300', fontSize: 14 }}>Has Value: False – Error</Box>
-            <TextField
-              label="Label"
-              error
-            />
-          </Stack>
-
-          {/* Input Adornments – Error */}
-          <Stack spacing={2}>
-            <Box sx={{ color: 'grey.300', fontSize: 14 }}>Input Adornments – Error</Box>
-            <TextField
-              label="Label"
-              error
-              slotProps={{
-                input: {
-                  startAdornment: (
-                    <InputAdornment position="start">Kg</InputAdornment>
-                  ),
-                },
-              }}
-            />
-            {/* Error + suffix */}
-            <TextField
-              label="Label"
-              error
-              slotProps={{
-                input: {
-                  endAdornment: (
-                    <InputAdornment position="end">Kg</InputAdornment>
-                  ),
-                },
-              }}
-            />
-          </Stack>
-        </Stack>
-
-        {/* Row 4 – Error + Helper (bottom rows of PDF) */}
-        <Stack direction="row" spacing={10} alignItems="flex-start">
-          {/* Has Value: True – Error + helper */}
-          <Stack spacing={2}>
-            <Box sx={{ color: 'grey.300', fontSize: 14 }}>Has Value: True – Error</Box>
-            <TextField
-              label="Label"
-              defaultValue="Value"
-              error
-              helperText="Helper text"
-            />
-          </Stack>
-
-          {/* Has Value: False – Error + helper */}
-          <Stack spacing={2}>
-            <Box sx={{ color: 'grey.300', fontSize: 14 }}>Has Value: False – Error</Box>
-            <TextField
-              label="Label"
-              error
-              helperText="Helper text"
-            />
-          </Stack>
-
-          {/* Input Adornments – Error + helper */}
-          <Stack spacing={2}>
-            <Box sx={{ color: 'grey.300', fontSize: 14 }}>Input Adornments – Error</Box>
-            <TextField
-              label="Label"
-              error
-              helperText="Helper text"
-              slotProps={{
-                input: {
-                  startAdornment: (
-                    <InputAdornment position="start">Kg</InputAdornment>
-                  ),
-                },
-              }}
-            />
-            {/* Error + helper + suffix */}
-            <TextField
-              label="Label"
-              error
-              helperText="Helper text"
-              slotProps={{
-                input: {
-                  endAdornment: (
-                    <InputAdornment position="end">Kg</InputAdornment>
-                  ),
-                },
-              }}
-            />
-          </Stack>
-        </Stack>
-      </Stack>
-
       </Box>
     </ThemeProvider>
   );

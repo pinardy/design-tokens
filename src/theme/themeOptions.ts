@@ -16,7 +16,7 @@ import {
   menuItemStyleOverrides,
   menuStyleOverrides,
   tabStyleOverrides,
-  toolTipOverrides
+  toolTipOverrides,
 } from './styleOverrides';
 
 const { cc } = tokens;
@@ -24,12 +24,12 @@ const { cc } = tokens;
 export const lightThemeOptions: ThemeOptions = {
   typography: {
     body1: {
-      fontSize: '16px',   // label + field text
+      fontSize: '16px', // label + field text
       lineHeight: '140%',
       fontWeight: 400,
     },
     caption: {
-      fontSize: '12px',   // helper text + adornment text
+      fontSize: '12px', // helper text + adornment text
       lineHeight: '140%',
       fontWeight: 400,
     },
@@ -50,30 +50,30 @@ export const lightThemeOptions: ThemeOptions = {
     MuiFormControlLabel: formControlLabelOverrides,
     MuiRadioGroup: radioGroupStyleOverrides,
     MuiRadio: radioStyleOverrides,
-     MuiSwitch: switchStyleOverrides,
+    MuiSwitch: switchStyleOverrides,
 
-    MuiTextField: textFieldStyleOverrides,             // wrapper (defaultProps: { variant: 'outlined' })
-    MuiOutlinedInput: outlinedInputStyleOverrides,     // border + input text
-    MuiInputLabel: inputLabelStyleOverrides,           // floating label
-    MuiFormHelperText: formHelperTextOverrides,        // helper text under field
-    MuiInputAdornment: inputAdornmentOverrides,        // "Kg", "$" etc.
+    MuiTextField: textFieldStyleOverrides, // wrapper (defaultProps: { variant: 'outlined' })
+    MuiOutlinedInput: outlinedInputStyleOverrides, // border + input text
+    MuiInputLabel: inputLabelStyleOverrides, // floating label
+    MuiFormHelperText: formHelperTextOverrides, // helper text under field
+    MuiInputAdornment: inputAdornmentOverrides, // "Kg", "$" etc.
     MuiMenuItem: menuItemStyleOverrides,
-    MuiMenu : menuStyleOverrides,
+    MuiMenu: menuStyleOverrides,
     MuiSelect: selectStyleOverrides,
     MuiTab: tabStyleOverrides,
-    MuiTooltip: toolTipOverrides
+    MuiTooltip: toolTipOverrides,
   },
 };
 
 export const darkThemeOptions: ThemeOptions = {
   typography: {
     body1: {
-      fontSize: '16px',   // label + field text
+      fontSize: '16px', // label + field text
       lineHeight: '140%',
       fontWeight: 400,
     },
     caption: {
-      fontSize: '12px',   // helper text + adornment text
+      fontSize: '12px', // helper text + adornment text
       lineHeight: '140%',
       fontWeight: 400,
     },
@@ -106,10 +106,9 @@ export const darkThemeOptions: ThemeOptions = {
     MuiFormHelperText: formHelperTextOverrides,
     MuiInputAdornment: inputAdornmentOverrides,
     MuiMenuItem: menuItemStyleOverrides,
-    MuiMenu : menuStyleOverrides,
+    MuiMenu: menuStyleOverrides,
     MuiSelect: selectStyleOverrides,
     MuiTab: tabStyleOverrides,
-    MuiTooltip: toolTipOverrides
-
+    MuiTooltip: toolTipOverrides,
   },
 };
