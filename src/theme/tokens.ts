@@ -20,7 +20,7 @@ export const tokens = {
           '350': '#B0B0B0',
           '400': '#A3A3A3',
           '450': '#969696',
-          '500': '#898989',
+          '500': '#FDFDFD',
           '550': '#797B7B',
           '600': '#6E6E6E',
           '650': '#5C5C5C',
@@ -230,7 +230,7 @@ export const tokens = {
           tertiary: '#FDFDFD',
         },
         text: {
-          subtle: '#898989',
+          subtle: '#FDFDFD',
           subtlest: '#C2C2C2',
           disabled: '#FDFDFD',
           error: '#F35962',
