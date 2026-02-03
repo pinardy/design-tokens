@@ -20,7 +20,7 @@
           "350": { "value": "#B0B0B0" },
           "400": { "value": "#A3A3A3" },
           "450": { "value": "#969696" },
-          "500": { "value": "#898989" },
+          "500": { "value": "#FDFDFD" },
           "550": { "value": "#797B7B" },
           "600": { "value": "#6E6E6E" },
           "650": { "value": "#5C5C5C" },
@@ -241,6 +241,14 @@
           "inverse": { "value": "{cc.ref.palette.grey.1000}" },
           "accent": { "value": "{cc.ref.palette.cyan.400}" },
           "tertiary": { "value": "{cc.ref.palette.grey.00}" },
+        },
+        "background": {
+          "tooltip": { "value": "#616161" },
+        },
+        "paper": {
+          "elevation": {
+            "06": { "value": "#2E2E2E" },
+          },
         },
       },
     },
