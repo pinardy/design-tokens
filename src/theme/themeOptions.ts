@@ -17,6 +17,8 @@ import {
   menuStyleOverrides,
   tabStyleOverrides,
   toolTipOverrides,
+  chipStyleOverrides,
+  skeletonOverrides
 } from './styleOverrides';
 
 const { cc } = tokens;
@@ -62,6 +64,8 @@ export const lightThemeOptions: ThemeOptions = {
     MuiSelect: selectStyleOverrides,
     MuiTab: tabStyleOverrides,
     MuiTooltip: toolTipOverrides,
+    MuiChip: chipStyleOverrides,
+    MuiSkeleton: skeletonOverrides
   },
 };
 
@@ -110,5 +114,7 @@ export const darkThemeOptions: ThemeOptions = {
     MuiSelect: selectStyleOverrides,
     MuiTab: tabStyleOverrides,
     MuiTooltip: toolTipOverrides,
+    MuiChip: chipStyleOverrides,
+    MuiSkeleton: skeletonOverrides
   },
 };

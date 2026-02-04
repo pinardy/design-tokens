@@ -384,3 +384,76 @@ export const toolTipOverrides: Components['MuiTooltip'] = {
     },
   },
 };
+
+export const chipStyleOverrides: Components['MuiChip'] = {
+  styleOverrides: {
+    root: ({ ownerState }) => {
+      const intent = ownerState.color;
+      const isPrimary = intent === 'primary';
+      const isOutlined = ownerState.variant === 'outlined';
+
+      const activeColor = isPrimary
+        ? cc.ref.palette.cyan['400']
+        : cc.ref.palette.grey['400'];
+
+      const outlinedStyles = {
+        borderColor: activeColor,
+        color: activeColor,
+
+        '&.MuiChip-clickable:hover': {
+          backgroundColor: alpha(activeColor, 0.08),
+        },
+
+        '&.Mui-focusVisible, &.MuiChip-clickable:active': {
+          backgroundColor: alpha(activeColor, 0.30),
+        },
+
+        '&.Mui-disabled': {
+          borderColor: alpha(activeColor, 0.38),
+          color: alpha(activeColor, 0.38),
+        },
+      } as const;
+
+      const filledPrimaryStyles = {
+        backgroundColor: activeColor,
+        color: alpha(cc.ref.palette.grey['1000'], 0.87),
+
+        '&.Mui-disabled': {
+          backgroundColor: alpha(cc.ref.palette.grey['00'], 0.06),
+          color: alpha(cc.ref.palette.grey['00'], 0.38),
+        },
+      } as const;
+
+      const filledSecondaryStyles = {
+        backgroundColor: activeColor,
+        color: alpha(cc.ref.palette.grey['1000'], 0.87),
+
+        '&.Mui-disabled': {
+          backgroundColor: alpha(cc.ref.palette.grey['400'], 0.38),
+          color: alpha(cc.ref.palette.grey['1000'], 0.33),
+        },
+
+        '&.MuiChip-clickable:hover': {
+          backgroundColor: cc.ref.palette.grey['600'],
+        },
+
+        '&.Mui-focusVisible, &.MuiChip-clickable:active': {
+          backgroundColor: cc.ref.palette.grey['600'],
+        },
+      } as const;
+
+      if (isOutlined) {
+        return outlinedStyles;
+      }
+
+      return isPrimary ? filledPrimaryStyles : filledSecondaryStyles;
+    },
+  },
+};
+export const skeletonOverrides : Components['MuiSkeleton'] = {
+  styleOverrides: {
+    root: {
+      backgroundColor: alpha(cc.ref.palette.grey['00'], 0.04),
+    },
+  },
+};
