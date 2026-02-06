@@ -18,6 +18,8 @@ export const buttonStyleOverrides: Components['MuiButton'] = {
       },
     },
     outlined: {
+      color: cc.sem.colour.text.tertiary,
+      borderColor: cc.sem.colour.action.tertiary,
       '&.Mui-active': {
         color: cc.sem.colour.text.tertiary,
         border: `1px solid ${cc.sem.colour.action.tertiary}`,
