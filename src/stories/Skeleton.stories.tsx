@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import Stack from '@mui/material/Stack';
 import Skeleton from '@mui/material/Skeleton';
@@ -28,7 +28,7 @@ export default meta;
 type Story = StoryObj<SkeletonStoryProps>;
 
 /* -------------------------------------------------------------------------- */
-/*                          Themed Skeleton Row                                   */
+/*                          Themed Skeleton Row                               */
 /* -------------------------------------------------------------------------- */
 
 const ThemedSkeletonRow: React.FC<{ themeMode: 'light' | 'dark' }> = ({ themeMode }) => {

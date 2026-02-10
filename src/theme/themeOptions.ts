@@ -18,7 +18,8 @@ import {
   tabStyleOverrides,
   toolTipOverrides,
   chipStyleOverrides,
-  skeletonOverrides
+  skeletonOverrides,
+  sliderOverrides
 } from './styleOverrides';
 
 const { cc } = tokens;
@@ -65,7 +66,8 @@ export const lightThemeOptions: ThemeOptions = {
     MuiTab: tabStyleOverrides,
     MuiTooltip: toolTipOverrides,
     MuiChip: chipStyleOverrides,
-    MuiSkeleton: skeletonOverrides
+    MuiSkeleton: skeletonOverrides,
+    MuiSlider: sliderOverrides
   },
 };
 
@@ -115,6 +117,7 @@ export const darkThemeOptions: ThemeOptions = {
     MuiTab: tabStyleOverrides,
     MuiTooltip: toolTipOverrides,
     MuiChip: chipStyleOverrides,
-    MuiSkeleton: skeletonOverrides
+    MuiSkeleton: skeletonOverrides,
+    MuiSlider: sliderOverrides
   },
 };

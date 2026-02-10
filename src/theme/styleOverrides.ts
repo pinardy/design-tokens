@@ -459,3 +459,77 @@ export const skeletonOverrides : Components['MuiSkeleton'] = {
     },
   },
 };
+
+export const sliderOverrides: Components['MuiSlider'] = {
+  styleOverrides: {
+    // Disabled state
+    root: {
+      '&.Mui-disabled': {
+        '& .MuiSlider-thumb': {
+          backgroundColor: cc.sem.colour.action.secondary,
+          boxShadow: 'none',
+        },
+
+        '& .MuiSlider-track': {
+          backgroundColor: cc.sem.colour.action.secondary,
+        },
+        '& .MuiSlider-rail': {
+          backgroundColor: alpha(cc.sem.colour.action.secondary, 0.38),
+        },
+
+        '& .MuiSlider-mark': {
+          backgroundColor: cc.sem.colour.action.secondary,
+        },
+
+        '& .MuiSlider-markActive': {
+          backgroundColor: cc.sem.colour.paper.elevation['00'],
+        },
+      },
+    },
+
+    // Enabled state
+    thumb: {
+      backgroundColor: cc.sem.colour.action.primary,
+      // Box shadow for hover effect
+      '&:hover, &.Mui-focusVisible': {
+        boxShadow: `0 0 0 8px ${
+          alpha(cc.sem.colour.action.primary,0.16)
+        }`,
+      },
+    },
+
+    // selected area
+    track: {
+      backgroundColor: cc.sem.colour.action.primary,
+    },
+
+    // Unselected area
+    rail: {
+      backgroundColor: alpha(cc.sem.colour.action.primary, 0.38),
+    },
+
+    // Selected marker dot
+    mark: {
+      backgroundColor: cc.sem.colour.action.primary,
+    },
+
+    // Unselected marker dot
+    markActive: {
+      backgroundColor: cc.sem.colour.paper.elevation['00'],
+    },
+
+    // Value label (tooltip) 
+    valueLabel: { 
+      '& .MuiSlider-valueLabelCircle': {
+        backgroundColor: cc.ref.palette.grey['600'],
+      },
+      '& .MuiSlider-valueLabelLabel': {
+        color: alpha(cc.ref.palette.grey['00'], 0.7),
+      },
+    },
+  },
+};
+
+
+
+
