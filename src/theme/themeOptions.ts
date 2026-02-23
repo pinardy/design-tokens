@@ -19,7 +19,11 @@ import {
   toolTipOverrides,
   chipStyleOverrides,
   skeletonOverrides,
-  sliderOverrides
+  sliderOverrides,
+  backdropOverrides,
+  dialogTitleOverrides,
+  circularProgressOverrides,
+  toggleButtonOverrides
 } from './styleOverrides';
 
 const { cc } = tokens;
@@ -67,7 +71,11 @@ export const lightThemeOptions: ThemeOptions = {
     MuiTooltip: toolTipOverrides,
     MuiChip: chipStyleOverrides,
     MuiSkeleton: skeletonOverrides,
-    MuiSlider: sliderOverrides
+    MuiSlider: sliderOverrides,
+    MuiBackdrop: backdropOverrides,
+    MuiDialogTitle: dialogTitleOverrides,
+    MuiCircularProgress: circularProgressOverrides,
+    MuiToggleButton: toggleButtonOverrides
   },
 };
 
@@ -118,6 +126,10 @@ export const darkThemeOptions: ThemeOptions = {
     MuiTooltip: toolTipOverrides,
     MuiChip: chipStyleOverrides,
     MuiSkeleton: skeletonOverrides,
-    MuiSlider: sliderOverrides
+    MuiSlider: sliderOverrides,
+    MuiBackdrop: backdropOverrides,
+    MuiDialogTitle: dialogTitleOverrides,
+    MuiCircularProgress: circularProgressOverrides,
+    MuiToggleButton: toggleButtonOverrides
   },
 };

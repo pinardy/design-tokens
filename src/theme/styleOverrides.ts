@@ -530,6 +530,116 @@ export const sliderOverrides: Components['MuiSlider'] = {
   },
 };
 
+export const backdropOverrides: Components['MuiBackdrop'] = 
+{
+  styleOverrides:
+  {
+    root:
+    {
+      backgroundColor: '#363636'
+    }
+  }
+}
+
+export const dialogTitleOverrides: Components['MuiDialogTitle'] = 
+{
+  styleOverrides:
+  {
+    root:
+    {
+      color: cc.ref.palette.grey['00']
+    }
+  }
+}
+
+export const circularProgressOverrides: Components["MuiCircularProgress"] = {
+  styleOverrides: {
+    root: {
+      color: cc.ref.palette.cyan['400'],
+    }
+  },
+};
+
+export const toggleButtonOverrides: Components['MuiToggleButton'] =
+{
+  styleOverrides:
+  {
+    root:
+    {
+      /* -------------- Unselected ------------------ */
+      color: cc.ref.palette.grey['00'],
+
+      borderColor: alpha(cc.ref.palette.grey['00'], 0.12),
+
+      '& .MuiSvgIcon-root':
+      {
+        color: alpha(cc.ref.palette.grey['00'], 0.7),
+      },
+
+      // Hover - activeState colour is transparent here, can just set the colour value with alpha 0.08
+      '&:hover':
+      {
+        backgroundColor: alpha(cc.ref.palette.grey['00'], 0.08),
+      },
+
+      //Pressed focused
+      '&:active':
+      {
+        backgroundColor: alpha(cc.ref.palette.grey['00'], 0.12),
+      },
+
+      '&.Mui-focusVisible':
+      {
+        backgroundColor: alpha(cc.ref.palette.grey['00'], 0.12),
+      },
+
+      '&.Mui-disabled':
+      {
+        color: alpha(cc.ref.palette.grey['00'], 0.38),
+        borderColor: alpha(cc.ref.palette.grey['00'], 0.12),
+
+        // To prevent MUI global opacity dimming
+        opacity: 1,
+
+        '& .MuiSvgIcon-root':
+        {
+          color: alpha(cc.ref.palette.grey['00'], 0.38),
+        },
+      },
+
+      /* -------------- Selected ------------------  */
+      '&.Mui-selected': {
+        backgroundColor: alpha(cc.ref.palette.grey['00'], 0.16),
+        borderColor: alpha(cc.ref.palette.grey['00'], 0.12),
+        color: cc.ref.palette.grey['00'],
+
+        '& .MuiSvgIcon-root': {
+          color: cc.ref.palette.grey['00'],
+        },
+      },
+
+
+      // Final_Hover_colour = active_state_clr + hover_overlay_colour
+      '&.Mui-selected:hover': {
+        backgroundColor: alpha(cc.ref.palette.grey['00'], 0.24),
+      },
+
+      '&.Mui-selected:active': {
+        backgroundColor: alpha(cc.ref.palette.grey['00'], 0.12),
+      },
+
+      '&.Mui-selected:focusVisible':
+      {
+        backgroundColor: alpha(cc.ref.palette.grey['00'], 0.12),
+      },
+    },
+  },
+};
+
+
+
+
+
 
 
 
