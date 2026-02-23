@@ -12,11 +12,9 @@ import SvgIcon from '@mui/material/SvgIcon';
 
 import { lightThemeOptions, darkThemeOptions } from '../theme/themeOptions';
 
-
 type ToggleButtonStoryProps = {
   themeMode?: 'light' | 'dark';
 };
-
 
 const meta: Meta<ToggleButtonStoryProps> = {
   title: 'Overall/Toggle Button',
@@ -40,14 +38,8 @@ type Story = StoryObj<ToggleButtonStoryProps>;
 
 const PlaceholderBoldIcon: React.FC = () => (
   <SvgIcon fontSize="small" viewBox="0 0 24 24">
-    <path
-      d="M7 4h6a3 3 0 010 6H7z"
-      fill="currentColor"
-    />
-    <path
-      d="M7 10h6.5a3.5 3.5 0 010 7H7z"
-      fill="currentColor"
-    />
+    <path d="M7 4h6a3 3 0 010 6H7z" fill="currentColor" />
+    <path d="M7 10h6.5a3.5 3.5 0 010 7H7z" fill="currentColor" />
   </SvgIcon>
 );
 
@@ -92,25 +84,21 @@ const ToggleShowcase: React.FC<{ themeMode: 'light' | 'dark' }> = ({
         <Box
           sx={{
             display: 'grid',
-            gridTemplateColumns: '180px repeat(4, 120px)',
+            gridTemplateColumns: '180px repeat(2, 120px)',
             columnGap: 4,
             rowGap: 5,
             alignItems: 'center',
           }}
         >
+
           <Box />
           <Typography align="center" variant="subtitle2">
             Default
           </Typography>
           <Typography align="center" variant="subtitle2">
-            Hover
-          </Typography>
-          <Typography align="center" variant="subtitle2">
             Disabled
           </Typography>
-          <Typography align="center" variant="subtitle2">
-            Pressed
-          </Typography>
+
 
           <Typography>Selected: False</Typography>
 
@@ -121,36 +109,15 @@ const ToggleShowcase: React.FC<{ themeMode: 'light' | 'dark' }> = ({
           </Cell>
 
           <Cell>
-            <ToggleButton
-              value="false-hover"
-            >
-              <PlaceholderBoldIcon />
-            </ToggleButton>
-          </Cell>
-
-          <Cell>
             <ToggleButton value="false-disabled" disabled>
               <PlaceholderBoldIcon />
             </ToggleButton>
           </Cell>
 
-          <Cell>
-            <ToggleButton value="false-pressed">
-              <PlaceholderBoldIcon />
-            </ToggleButton>
-          </Cell>
 
           <Box />
           <Cell>
             <ToggleButton value="false-text-default">
-              Button
-            </ToggleButton>
-          </Cell>
-
-          <Cell>
-            <ToggleButton
-              value="false-text-hover"
-            >
               Button
             </ToggleButton>
           </Cell>
@@ -161,13 +128,9 @@ const ToggleShowcase: React.FC<{ themeMode: 'light' | 'dark' }> = ({
             </ToggleButton>
           </Cell>
 
-          <Cell>
-            <ToggleButton value="false-text-pressed" selected>
-              Button
-            </ToggleButton>
-          </Cell>
 
           <Typography>Selected: True</Typography>
+
           <Cell>
             <ToggleButton value="true-default" selected>
               <PlaceholderBoldIcon />
@@ -175,22 +138,7 @@ const ToggleShowcase: React.FC<{ themeMode: 'light' | 'dark' }> = ({
           </Cell>
 
           <Cell>
-            <ToggleButton
-              value="true-hover"
-              selected
-            >
-              <PlaceholderBoldIcon />
-            </ToggleButton>
-          </Cell>
-
-          <Cell>
             <Box />
-          </Cell>
-
-          <Cell>
-            <ToggleButton value="true-pressed" selected>
-              <PlaceholderBoldIcon />
-            </ToggleButton>
           </Cell>
 
           <Box />
@@ -201,22 +149,7 @@ const ToggleShowcase: React.FC<{ themeMode: 'light' | 'dark' }> = ({
           </Cell>
 
           <Cell>
-            <ToggleButton
-              value="true-text-hover"
-              selected
-            >
-              Button
-            </ToggleButton>
-          </Cell>
-
-          <Cell>
             <Box />
-          </Cell>
-
-          <Cell>
-            <ToggleButton value="true-text-pressed" selected>
-              Button
-            </ToggleButton>
           </Cell>
         </Box>
       </Box>
