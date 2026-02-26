@@ -636,7 +636,41 @@ export const toggleButtonOverrides: Components['MuiToggleButton'] =
   },
 };
 
+export const linkStyleOverrides: Components['MuiLink'] = {
+  defaultProps: {
+    underline: 'hover',
+  },
+  styleOverrides: {
+    root: ({ ownerState }) => {
+      const linkColor = ownerState.color;
 
+      const primaryColor = cc.ref.palette.cyan['400'];
+      const secondaryColor = cc.ref.palette.grey['00'];
+      const focusBorderColor = cc.ref.palette.cyan['600'];
+
+      const activeColor =
+        linkColor === 'primary'
+          ? primaryColor
+          : linkColor === 'secondary'
+          ? secondaryColor
+          : primaryColor; 
+
+      return {
+        color: activeColor,
+
+        '&:focus-visible': {
+          outline: `2px solid ${focusBorderColor}`,
+          outlineOffset: '2px',
+          borderRadius: 2,
+        },
+
+        '&:visited': {
+          color: activeColor,
+        },
+      };
+    },
+  },
+};
 
 
 

@@ -23,7 +23,8 @@ import {
   backdropOverrides,
   dialogTitleOverrides,
   circularProgressOverrides,
-  toggleButtonOverrides
+  toggleButtonOverrides,
+  linkStyleOverrides
 } from './styleOverrides';
 
 const { cc } = tokens;
@@ -75,7 +76,8 @@ export const lightThemeOptions: ThemeOptions = {
     MuiBackdrop: backdropOverrides,
     MuiDialogTitle: dialogTitleOverrides,
     MuiCircularProgress: circularProgressOverrides,
-    MuiToggleButton: toggleButtonOverrides
+    MuiToggleButton: toggleButtonOverrides,
+    MuiLink : linkStyleOverrides
   },
 };
 
@@ -130,6 +132,7 @@ export const darkThemeOptions: ThemeOptions = {
     MuiBackdrop: backdropOverrides,
     MuiDialogTitle: dialogTitleOverrides,
     MuiCircularProgress: circularProgressOverrides,
-    MuiToggleButton: toggleButtonOverrides
+    MuiToggleButton: toggleButtonOverrides,
+    MuiLink : linkStyleOverrides
   },
 };
