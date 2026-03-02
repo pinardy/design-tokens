@@ -32,6 +32,9 @@ export default meta;
 
 type Story = StoryObj<LinkStoryProps>;
 
+/* -------------------------------------------------------------------------- */
+/*                               Themed Link Grid                             */
+/* -------------------------------------------------------------------------- */
 const ThemedLinkGrid: React.FC<{
     themeMode: 'light' | 'dark';
 }> = ({ themeMode }) => {
@@ -114,6 +117,9 @@ const ThemedLinkGrid: React.FC<{
     );
 };
 
+/* -------------------------------------------------------------------------- */
+/*                                   Stories                                  */
+/* -------------------------------------------------------------------------- */
 export const Default: Story = {
     render: (args) => (
         <ThemedLinkGrid

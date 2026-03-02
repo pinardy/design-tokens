@@ -664,6 +664,10 @@ export const linkStyleOverrides: Components['MuiLink'] = {
           borderRadius: 2,
         },
 
+        '& > svg': {
+          color : alpha(activeColor, 0.56),
+        },
+
         '&:visited': {
           color: activeColor,
         },
@@ -672,8 +676,48 @@ export const linkStyleOverrides: Components['MuiLink'] = {
   },
 };
 
+export const breadcrumbsStyleOverrides: Components['MuiBreadcrumbs'] = {
+  styleOverrides: {
+    root: {
+      "& .MuiBreadcrumbs-ol > li > button.MuiButtonBase-root": {
+        position: 'relative',
+        backgroundColor: cc.ref.palette.grey['600'],
+        borderRadius: 4,
+        overflow: 'hidden',
 
+        '& .MuiSvgIcon-root': {
+          color: alpha(cc.ref.palette.grey['00'], 0.56),
+        },
 
+        '&:hover::after': {
+          content: '""',
+          position: 'absolute',
+          inset: 0,
+          backgroundColor: alpha(cc.ref.palette.grey['00'], 0.08), 
+          borderRadius: 4,
+          pointerEvents: 'none',
+        },
 
+        '&:focus-visible::after': {
+          content: '""',
+          position: 'absolute',
+          inset: 0,
+          backgroundColor: alpha(cc.ref.palette.grey['00'], 0.12),
+          borderRadius: 4,
+          pointerEvents: 'none',
+        },
+      },
+    },
 
+    //For current page
+    li: {
+      '&:last-of-type': {
+        color: cc.ref.palette.grey['00'], 
+      },
+    },
 
+    separator: {
+      color: alpha(cc.ref.palette.grey['00'], 0.56), 
+    },
+  },
+};
