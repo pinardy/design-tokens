@@ -394,9 +394,7 @@ export const chipStyleOverrides: Components['MuiChip'] = {
       const isPrimary = intent === 'primary';
       const isOutlined = ownerState.variant === 'outlined';
 
-      const activeColor = isPrimary
-        ? cc.ref.palette.cyan['400']
-        : cc.ref.palette.grey['400'];
+      const activeColor = isPrimary ? cc.ref.palette.cyan['400'] : cc.ref.palette.grey['400'];
 
       const outlinedStyles = {
         borderColor: activeColor,
@@ -407,7 +405,7 @@ export const chipStyleOverrides: Components['MuiChip'] = {
         },
 
         '&.Mui-focusVisible, &.MuiChip-clickable:active': {
-          backgroundColor: alpha(activeColor, 0.30),
+          backgroundColor: alpha(activeColor, 0.3),
         },
 
         '&.Mui-disabled': {
@@ -452,7 +450,7 @@ export const chipStyleOverrides: Components['MuiChip'] = {
     },
   },
 };
-export const skeletonOverrides : Components['MuiSkeleton'] = {
+export const skeletonOverrides: Components['MuiSkeleton'] = {
   styleOverrides: {
     root: {
       backgroundColor: alpha(cc.ref.palette.grey['00'], 0.04),
@@ -492,9 +490,7 @@ export const sliderOverrides: Components['MuiSlider'] = {
       backgroundColor: cc.sem.colour.action.primary,
       // Box shadow for hover effect
       '&:hover, &.Mui-focusVisible': {
-        boxShadow: `0 0 0 8px ${
-          alpha(cc.sem.colour.action.primary,0.16)
-        }`,
+        boxShadow: `0 0 0 8px ${alpha(cc.sem.colour.action.primary, 0.16)}`,
       },
     },
 
@@ -518,8 +514,8 @@ export const sliderOverrides: Components['MuiSlider'] = {
       backgroundColor: cc.sem.colour.paper.elevation['00'],
     },
 
-    // Value label (tooltip) 
-    valueLabel: { 
+    // Value label (tooltip)
+    valueLabel: {
       '& .MuiSlider-valueLabelCircle': {
         backgroundColor: cc.ref.palette.grey['600'],
       },
@@ -530,79 +526,64 @@ export const sliderOverrides: Components['MuiSlider'] = {
   },
 };
 
-export const backdropOverrides: Components['MuiBackdrop'] = 
-{
-  styleOverrides:
-  {
-    root:
-    {
-      backgroundColor: '#363636'
-    }
-  }
-}
-
-export const dialogTitleOverrides: Components['MuiDialogTitle'] = 
-{
-  styleOverrides:
-  {
-    root:
-    {
-      color: cc.ref.palette.grey['00']
-    }
-  }
-}
-
-export const circularProgressOverrides: Components["MuiCircularProgress"] = {
+export const backdropOverrides: Components['MuiBackdrop'] = {
   styleOverrides: {
     root: {
-      color: cc.ref.palette.cyan['400'],
-    }
+      backgroundColor: '#363636',
+    },
   },
 };
 
-export const toggleButtonOverrides: Components['MuiToggleButton'] =
-{
-  styleOverrides:
-  {
-    root:
-    {
+export const dialogTitleOverrides: Components['MuiDialogTitle'] = {
+  styleOverrides: {
+    root: {
+      color: cc.ref.palette.grey['00'],
+    },
+  },
+};
+
+export const circularProgressOverrides: Components['MuiCircularProgress'] = {
+  styleOverrides: {
+    root: {
+      color: cc.ref.palette.cyan['400'],
+    },
+  },
+};
+
+export const toggleButtonOverrides: Components['MuiToggleButton'] = {
+  styleOverrides: {
+    root: {
       /* -------------- Unselected ------------------ */
       color: cc.ref.palette.grey['00'],
 
       borderColor: alpha(cc.ref.palette.grey['00'], 0.12),
 
-      '& .MuiSvgIcon-root':
-      {
+      '& .MuiSvgIcon-root': {
         color: alpha(cc.ref.palette.grey['00'], 0.7),
       },
 
       // Hover - activeState colour is transparent here, can just set the colour value with alpha 0.08
-      '&:hover':
-      {
+      '&:hover': {
         backgroundColor: alpha(cc.ref.palette.grey['00'], 0.08),
       },
 
       //Pressed focused
-      '&:active':
-      {
+      '&:active': {
         backgroundColor: alpha(cc.ref.palette.grey['00'], 0.12),
       },
 
-      '&.Mui-focusVisible':
-      {
+      '&.Mui-focusVisible': {
         backgroundColor: alpha(cc.ref.palette.grey['00'], 0.12),
       },
 
-      '&.Mui-disabled':
-      {
+      '&.Mui-disabled': {
         color: alpha(cc.ref.palette.grey['00'], 0.38),
         borderColor: alpha(cc.ref.palette.grey['00'], 0.12),
 
         // To prevent MUI global opacity dimming
         opacity: 1,
 
-        '& .MuiSvgIcon-root':
-        {
+        '& .MuiSvgIcon-root': {
           color: alpha(cc.ref.palette.grey['00'], 0.38),
         },
       },
@@ -618,7 +599,6 @@ export const toggleButtonOverrides: Components['MuiToggleButton'] =
         },
       },
 
-
       // Final_Hover_colour = active_state_clr + hover_overlay_colour
       '&.Mui-selected:hover': {
         backgroundColor: alpha(cc.ref.palette.grey['00'], 0.24),
@@ -628,8 +608,7 @@ export const toggleButtonOverrides: Components['MuiToggleButton'] =
         backgroundColor: alpha(cc.ref.palette.grey['00'], 0.12),
       },
 
-      '&.Mui-selected:focusVisible':
-      {
+      '&.Mui-selected:focusVisible': {
         backgroundColor: alpha(cc.ref.palette.grey['00'], 0.12),
       },
     },
@@ -652,8 +631,8 @@ export const linkStyleOverrides: Components['MuiLink'] = {
         linkColor === 'primary'
           ? primaryColor
           : linkColor === 'secondary'
-          ? secondaryColor
-          : primaryColor; 
+            ? secondaryColor
+            : primaryColor;
 
       return {
         color: activeColor,
@@ -665,7 +644,7 @@ export const linkStyleOverrides: Components['MuiLink'] = {
         },
 
         '& > svg': {
-          color : alpha(activeColor, 0.56),
+          color: alpha(activeColor, 0.56),
         },
 
         '&:visited': {
@@ -679,7 +658,23 @@ export const linkStyleOverrides: Components['MuiLink'] = {
 export const breadcrumbsStyleOverrides: Components['MuiBreadcrumbs'] = {
   styleOverrides: {
     root: {
-      "& .MuiBreadcrumbs-ol > li > button.MuiButtonBase-root": {
+      // FIXED: Enforce flex and alignment on the breadcrumbs content
+      '& .MuiBreadcrumbs-ol': {
+        display: 'flex',
+        alignItems: 'center',
+      },
+
+      '& .MuiBreadcrumbs-li': {
+        display: 'flex',
+        alignItems: 'center',
+      },
+
+      '& .MuiBreadcrumbs-separator': {
+        display: 'flex',
+        alignItems: 'center',
+      },
+
+      '& .MuiBreadcrumbs-ol > li > button.MuiButtonBase-root': {
         position: 'relative',
         backgroundColor: cc.ref.palette.grey['600'],
         borderRadius: 4,
@@ -693,7 +688,7 @@ export const breadcrumbsStyleOverrides: Components['MuiBreadcrumbs'] = {
           content: '""',
           position: 'absolute',
           inset: 0,
-          backgroundColor: alpha(cc.ref.palette.grey['00'], 0.08), 
+          backgroundColor: alpha(cc.ref.palette.grey['00'], 0.08),
           borderRadius: 4,
           pointerEvents: 'none',
         },
@@ -712,12 +707,12 @@ export const breadcrumbsStyleOverrides: Components['MuiBreadcrumbs'] = {
     //For current page
     li: {
       '&:last-of-type': {
-        color: cc.ref.palette.grey['00'], 
+        color: cc.ref.palette.grey['00'],
       },
     },
 
     separator: {
-      color: alpha(cc.ref.palette.grey['00'], 0.56), 
+      color: alpha(cc.ref.palette.grey['00'], 0.56),
     },
   },
 };
