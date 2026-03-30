@@ -17,6 +17,15 @@ import {
   menuStyleOverrides,
   tabStyleOverrides,
   toolTipOverrides,
+  chipStyleOverrides,
+  skeletonOverrides,
+  sliderOverrides,
+  backdropOverrides,
+  dialogTitleOverrides,
+  circularProgressOverrides,
+  toggleButtonOverrides,
+  linkStyleOverrides,
+  breadcrumbsStyleOverrides,
 } from './styleOverrides';
 
 const { cc } = tokens;
@@ -62,6 +71,15 @@ export const lightThemeOptions: ThemeOptions = {
     MuiSelect: selectStyleOverrides,
     MuiTab: tabStyleOverrides,
     MuiTooltip: toolTipOverrides,
+    MuiChip: chipStyleOverrides,
+    MuiSkeleton: skeletonOverrides,
+    MuiSlider: sliderOverrides,
+    MuiBackdrop: backdropOverrides,
+    MuiDialogTitle: dialogTitleOverrides,
+    MuiCircularProgress: circularProgressOverrides,
+    MuiToggleButton: toggleButtonOverrides,
+    MuiLink: linkStyleOverrides,
+    MuiBreadcrumbs: breadcrumbsStyleOverrides,
   },
 };
 
@@ -110,5 +128,14 @@ export const darkThemeOptions: ThemeOptions = {
     MuiSelect: selectStyleOverrides,
     MuiTab: tabStyleOverrides,
     MuiTooltip: toolTipOverrides,
+    MuiChip: chipStyleOverrides,
+    MuiSkeleton: skeletonOverrides,
+    MuiSlider: sliderOverrides,
+    MuiBackdrop: backdropOverrides,
+    MuiDialogTitle: dialogTitleOverrides,
+    MuiCircularProgress: circularProgressOverrides,
+    MuiToggleButton: toggleButtonOverrides,
+    MuiLink: linkStyleOverrides,
+    MuiBreadcrumbs: breadcrumbsStyleOverrides,
   },
 };

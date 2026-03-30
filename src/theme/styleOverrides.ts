@@ -386,3 +386,333 @@ export const toolTipOverrides: Components['MuiTooltip'] = {
     },
   },
 };
+
+export const chipStyleOverrides: Components['MuiChip'] = {
+  styleOverrides: {
+    root: ({ ownerState }) => {
+      const intent = ownerState.color;
+      const isPrimary = intent === 'primary';
+      const isOutlined = ownerState.variant === 'outlined';
+
+      const activeColor = isPrimary ? cc.ref.palette.cyan['400'] : cc.ref.palette.grey['400'];
+
+      const outlinedStyles = {
+        borderColor: activeColor,
+        color: activeColor,
+
+        '&.MuiChip-clickable:hover': {
+          backgroundColor: alpha(activeColor, 0.08),
+        },
+
+        '&.Mui-focusVisible, &.MuiChip-clickable:active': {
+          backgroundColor: alpha(activeColor, 0.3),
+        },
+
+        '&.Mui-disabled': {
+          borderColor: alpha(activeColor, 0.38),
+          color: alpha(activeColor, 0.38),
+        },
+      } as const;
+
+      const filledPrimaryStyles = {
+        backgroundColor: activeColor,
+        color: alpha(cc.ref.palette.grey['1000'], 0.87),
+
+        '&.Mui-disabled': {
+          backgroundColor: alpha(cc.ref.palette.grey['00'], 0.06),
+          color: alpha(cc.ref.palette.grey['00'], 0.38),
+        },
+      } as const;
+
+      const filledSecondaryStyles = {
+        backgroundColor: activeColor,
+        color: alpha(cc.ref.palette.grey['1000'], 0.87),
+
+        '&.Mui-disabled': {
+          backgroundColor: alpha(cc.ref.palette.grey['400'], 0.38),
+          color: alpha(cc.ref.palette.grey['1000'], 0.33),
+        },
+
+        '&.MuiChip-clickable:hover': {
+          backgroundColor: cc.ref.palette.grey['600'],
+        },
+
+        '&.Mui-focusVisible, &.MuiChip-clickable:active': {
+          backgroundColor: cc.ref.palette.grey['600'],
+        },
+      } as const;
+
+      if (isOutlined) {
+        return outlinedStyles;
+      }
+
+      return isPrimary ? filledPrimaryStyles : filledSecondaryStyles;
+    },
+  },
+};
+export const skeletonOverrides: Components['MuiSkeleton'] = {
+  styleOverrides: {
+    root: {
+      backgroundColor: alpha(cc.ref.palette.grey['00'], 0.04),
+    },
+  },
+};
+
+export const sliderOverrides: Components['MuiSlider'] = {
+  styleOverrides: {
+    // Disabled state
+    root: {
+      '&.Mui-disabled': {
+        '& .MuiSlider-thumb': {
+          backgroundColor: cc.sem.colour.action.secondary,
+          boxShadow: 'none',
+        },
+
+        '& .MuiSlider-track': {
+          backgroundColor: cc.sem.colour.action.secondary,
+        },
+        '& .MuiSlider-rail': {
+          backgroundColor: alpha(cc.sem.colour.action.secondary, 0.38),
+        },
+
+        '& .MuiSlider-mark': {
+          backgroundColor: cc.sem.colour.action.secondary,
+        },
+
+        '& .MuiSlider-markActive': {
+          backgroundColor: cc.sem.colour.paper.elevation['00'],
+        },
+      },
+    },
+
+    // Enabled state
+    thumb: {
+      backgroundColor: cc.sem.colour.action.primary,
+      // Box shadow for hover effect
+      '&:hover, &.Mui-focusVisible': {
+        boxShadow: `0 0 0 8px ${alpha(cc.sem.colour.action.primary, 0.16)}`,
+      },
+    },
+
+    // selected area
+    track: {
+      backgroundColor: cc.sem.colour.action.primary,
+    },
+
+    // Unselected area
+    rail: {
+      backgroundColor: alpha(cc.sem.colour.action.primary, 0.38),
+    },
+
+    // Selected marker dot
+    mark: {
+      backgroundColor: cc.sem.colour.action.primary,
+    },
+
+    // Unselected marker dot
+    markActive: {
+      backgroundColor: cc.sem.colour.paper.elevation['00'],
+    },
+
+    // Value label (tooltip)
+    valueLabel: {
+      '& .MuiSlider-valueLabelCircle': {
+        backgroundColor: cc.ref.palette.grey['600'],
+      },
+      '& .MuiSlider-valueLabelLabel': {
+        color: alpha(cc.ref.palette.grey['00'], 0.7),
+      },
+    },
+  },
+};
+
+export const backdropOverrides: Components['MuiBackdrop'] = {
+  styleOverrides: {
+    root: {
+      backgroundColor: '#363636',
+    },
+  },
+};
+
+export const dialogTitleOverrides: Components['MuiDialogTitle'] = {
+  styleOverrides: {
+    root: {
+      color: cc.ref.palette.grey['00'],
+    },
+  },
+};
+
+export const circularProgressOverrides: Components['MuiCircularProgress'] = {
+  styleOverrides: {
+    root: {
+      color: cc.ref.palette.cyan['400'],
+    },
+  },
+};
+
+export const toggleButtonOverrides: Components['MuiToggleButton'] = {
+  styleOverrides: {
+    root: {
+      /* -------------- Unselected ------------------ */
+      color: cc.ref.palette.grey['00'],
+
+      borderColor: alpha(cc.ref.palette.grey['00'], 0.12),
+
+      '& .MuiSvgIcon-root': {
+        color: alpha(cc.ref.palette.grey['00'], 0.7),
+      },
+
+      // Hover - activeState colour is transparent here, can just set the colour value with alpha 0.08
+      '&:hover': {
+        backgroundColor: alpha(cc.ref.palette.grey['00'], 0.08),
+      },
+
+      //Pressed focused
+      '&:active': {
+        backgroundColor: alpha(cc.ref.palette.grey['00'], 0.12),
+      },
+
+      '&.Mui-focusVisible': {
+        backgroundColor: alpha(cc.ref.palette.grey['00'], 0.12),
+      },
+
+      '&.Mui-disabled': {
+        color: alpha(cc.ref.palette.grey['00'], 0.38),
+        borderColor: alpha(cc.ref.palette.grey['00'], 0.12),
+
+        // To prevent MUI global opacity dimming
+        opacity: 1,
+
+        '& .MuiSvgIcon-root': {
+          color: alpha(cc.ref.palette.grey['00'], 0.38),
+        },
+      },
+
+      /* -------------- Selected ------------------  */
+      '&.Mui-selected': {
+        backgroundColor: alpha(cc.ref.palette.grey['00'], 0.16),
+        borderColor: alpha(cc.ref.palette.grey['00'], 0.12),
+        color: cc.ref.palette.grey['00'],
+
+        '& .MuiSvgIcon-root': {
+          color: cc.ref.palette.grey['00'],
+        },
+      },
+
+      // Final_Hover_colour = active_state_clr + hover_overlay_colour
+      '&.Mui-selected:hover': {
+        backgroundColor: alpha(cc.ref.palette.grey['00'], 0.24),
+      },
+
+      '&.Mui-selected:active': {
+        backgroundColor: alpha(cc.ref.palette.grey['00'], 0.12),
+      },
+
+      '&.Mui-selected:focusVisible': {
+        backgroundColor: alpha(cc.ref.palette.grey['00'], 0.12),
+      },
+    },
+  },
+};
+
+export const linkStyleOverrides: Components['MuiLink'] = {
+  defaultProps: {
+    underline: 'hover',
+  },
+  styleOverrides: {
+    root: ({ ownerState }) => {
+      const linkColor = ownerState.color;
+
+      const primaryColor = cc.ref.palette.cyan['400'];
+      const secondaryColor = cc.ref.palette.grey['00'];
+      const focusBorderColor = cc.ref.palette.cyan['600'];
+
+      const activeColor =
+        linkColor === 'primary'
+          ? primaryColor
+          : linkColor === 'secondary'
+            ? secondaryColor
+            : primaryColor;
+
+      return {
+        color: activeColor,
+
+        '&:focus-visible': {
+          outline: `2px solid ${focusBorderColor}`,
+          outlineOffset: '2px',
+          borderRadius: 2,
+        },
+
+        '& > svg': {
+          color: alpha(activeColor, 0.56),
+        },
+
+        '&:visited': {
+          color: activeColor,
+        },
+      };
+    },
+  },
+};
+
+export const breadcrumbsStyleOverrides: Components['MuiBreadcrumbs'] = {
+  styleOverrides: {
+    root: {
+      // FIXED: Enforce flex and alignment on the breadcrumbs content
+      '& .MuiBreadcrumbs-ol': {
+        display: 'flex',
+        alignItems: 'center',
+      },
+
+      '& .MuiBreadcrumbs-li': {
+        display: 'flex',
+        alignItems: 'center',
+      },
+
+      '& .MuiBreadcrumbs-separator': {
+        display: 'flex',
+        alignItems: 'center',
+      },
+
+      '& .MuiBreadcrumbs-ol > li > button.MuiButtonBase-root': {
+        position: 'relative',
+        backgroundColor: cc.ref.palette.grey['600'],
+        borderRadius: 4,
+        overflow: 'hidden',
+
+        '& .MuiSvgIcon-root': {
+          color: alpha(cc.ref.palette.grey['00'], 0.56),
+        },
+
+        '&:hover::after': {
+          content: '""',
+          position: 'absolute',
+          inset: 0,
+          backgroundColor: alpha(cc.ref.palette.grey['00'], 0.08),
+          borderRadius: 4,
+          pointerEvents: 'none',
+        },
+
+        '&:focus-visible::after': {
+          content: '""',
+          position: 'absolute',
+          inset: 0,
+          backgroundColor: alpha(cc.ref.palette.grey['00'], 0.12),
+          borderRadius: 4,
+          pointerEvents: 'none',
+        },
+      },
+    },
+
+    //For current page
+    li: {
+      '&:last-of-type': {
+        color: cc.ref.palette.grey['00'],
+      },
+    },
+
+    separator: {
+      color: alpha(cc.ref.palette.grey['00'], 0.56),
+    },
+  },
+};
