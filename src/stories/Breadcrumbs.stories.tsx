@@ -1,9 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import {
-  ThemeProvider,
-  createTheme,
-} from '@mui/material/styles';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -58,7 +55,6 @@ const ChevronIcon = () => (
   </Box>
 );
 
-
 /* -------------------------------------------------------------------------- */
 /*                               Link Helpers                                 */
 /* -------------------------------------------------------------------------- */
@@ -75,23 +71,17 @@ const CrumbLink = ({ icon = false }: { icon?: boolean }) => (
 );
 
 const Current = ({ icon = false }: { icon?: boolean }) => (
-  <Typography
-    color="text.primary"
-    sx={{ display: 'inline-flex', alignItems: 'center' }}
-  >
+  <Typography color="text.primary" sx={{ display: 'inline-flex', alignItems: 'center' }}>
     {icon && <StarIcon />}
     Link
   </Typography>
 );
 
-
 /* -------------------------------------------------------------------------- */
 /*                               BreadCrumb Grid                              */
 /* -------------------------------------------------------------------------- */
 const BreadCrumbGrid: React.FC<{ themeMode: 'light' | 'dark' }> = ({ themeMode }) => {
-  const theme = createTheme(
-    themeMode === 'light' ? lightThemeOptions : darkThemeOptions
-  );
+  const theme = createTheme(themeMode === 'light' ? lightThemeOptions : darkThemeOptions);
 
   const cellSx = {
     minHeight: 80,

@@ -8,20 +8,20 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { lightThemeOptions, darkThemeOptions } from '../theme/themeOptions';
 
 type SkeletonStoryProps = {
-    themeMode?: 'light' | 'dark';
+  themeMode?: 'light' | 'dark';
 };
 
 const meta: Meta<SkeletonStoryProps> = {
-    title: 'Overall/Skeleton',
-    args: {
-        themeMode: 'dark',
+  title: 'Overall/Skeleton',
+  args: {
+    themeMode: 'dark',
+  },
+  argTypes: {
+    themeMode: {
+      control: 'radio',
+      options: ['light', 'dark'],
     },
-    argTypes: {
-        themeMode: {
-            control: 'radio',
-            options: ['light', 'dark'],
-        },
-    },
+  },
 };
 
 export default meta;
@@ -32,9 +32,7 @@ type Story = StoryObj<SkeletonStoryProps>;
 /* -------------------------------------------------------------------------- */
 
 const ThemedSkeletonRow: React.FC<{ themeMode: 'light' | 'dark' }> = ({ themeMode }) => {
-  const theme = createTheme(
-    themeMode === 'light' ? lightThemeOptions : darkThemeOptions
-  );
+  const theme = createTheme(themeMode === 'light' ? lightThemeOptions : darkThemeOptions);
 
   return (
     <ThemeProvider theme={theme}>
@@ -89,11 +87,10 @@ const ThemedSkeletonRow: React.FC<{ themeMode: 'light' | 'dark' }> = ({ themeMod
   );
 };
 
-
 /* -------------------------------------------------------------------------- */
 /*                                   Stories                                  */
 /* -------------------------------------------------------------------------- */
 
 export const Skeletons: Story = {
-    render: (args) => <ThemedSkeletonRow themeMode={args.themeMode!} />,
+  render: (args) => <ThemedSkeletonRow themeMode={args.themeMode!} />,
 };

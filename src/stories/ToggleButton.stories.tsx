@@ -1,9 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import {
-  ThemeProvider,
-  createTheme,
-} from '@mui/material/styles';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import ToggleButton from '@mui/material/ToggleButton';
 import Typography from '@mui/material/Typography';
@@ -64,12 +61,8 @@ const Cell: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 /*                        Themed Toggle Button Showcase                       */
 /* -------------------------------------------------------------------------- */
 
-const ToggleShowcase: React.FC<{ themeMode: 'light' | 'dark' }> = ({
-  themeMode,
-}) => {
-  const theme = createTheme(
-    themeMode === 'light' ? lightThemeOptions : darkThemeOptions
-  );
+const ToggleShowcase: React.FC<{ themeMode: 'light' | 'dark' }> = ({ themeMode }) => {
+  const theme = createTheme(themeMode === 'light' ? lightThemeOptions : darkThemeOptions);
 
   return (
     <ThemeProvider theme={theme}>
@@ -90,7 +83,6 @@ const ToggleShowcase: React.FC<{ themeMode: 'light' | 'dark' }> = ({
             alignItems: 'center',
           }}
         >
-
           <Box />
           <Typography align="center" variant="subtitle2">
             Default
@@ -98,7 +90,6 @@ const ToggleShowcase: React.FC<{ themeMode: 'light' | 'dark' }> = ({
           <Typography align="center" variant="subtitle2">
             Disabled
           </Typography>
-
 
           <Typography>Selected: False</Typography>
 
@@ -114,12 +105,9 @@ const ToggleShowcase: React.FC<{ themeMode: 'light' | 'dark' }> = ({
             </ToggleButton>
           </Cell>
 
-
           <Box />
           <Cell>
-            <ToggleButton value="false-text-default">
-              Button
-            </ToggleButton>
+            <ToggleButton value="false-text-default">Button</ToggleButton>
           </Cell>
 
           <Cell>
@@ -127,7 +115,6 @@ const ToggleShowcase: React.FC<{ themeMode: 'light' | 'dark' }> = ({
               Button
             </ToggleButton>
           </Cell>
-
 
           <Typography>Selected: True</Typography>
 
@@ -162,7 +149,5 @@ const ToggleShowcase: React.FC<{ themeMode: 'light' | 'dark' }> = ({
 /* -------------------------------------------------------------------------- */
 
 export const Default: Story = {
-  render: (args) => (
-    <ToggleShowcase themeMode={args.themeMode!} />
-  ),
+  render: (args) => <ToggleShowcase themeMode={args.themeMode!} />,
 };
