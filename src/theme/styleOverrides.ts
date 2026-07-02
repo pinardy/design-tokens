@@ -526,10 +526,14 @@ export const sliderOverrides: Components['MuiSlider'] = {
   },
 };
 
-export const backdropOverrides: Components['MuiBackdrop'] = {
-  styleOverrides: {
-    root: {
-      backgroundColor: '#363636',
+export const backdropOverrides: Components['MuiDialog'] = {
+  defaultProps: {
+    slotProps: {
+      backdrop: {
+        sx: {
+          backgroundColor: cc.sem.colour.paper.surface['08'],
+        },
+      },
     },
   },
 };
