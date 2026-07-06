@@ -550,6 +550,22 @@ export const circularProgressOverrides: Components['MuiCircularProgress'] = {
   },
 };
 
+export const iconStyleOverrides: Components['MuiIcon'] = {
+  styleOverrides: {
+    root: {
+      color: 'inherit',
+    },
+  },
+};
+
+export const svgIconStyleOverrides: Components['MuiSvgIcon'] = {
+  styleOverrides: {
+    root: {
+      color: 'inherit',
+    },
+  },
+};
+
 export const toggleButtonOverrides: Components['MuiToggleButton'] = {
   styleOverrides: {
     root: {
@@ -557,10 +573,6 @@ export const toggleButtonOverrides: Components['MuiToggleButton'] = {
       color: cc.ref.palette.grey['00'],
 
       borderColor: alpha(cc.ref.palette.grey['00'], 0.12),
-
-      '& .MuiSvgIcon-root': {
-        color: alpha(cc.ref.palette.grey['00'], 0.7),
-      },
 
       // Hover - activeState colour is transparent here, can just set the colour value with alpha 0.08
       '&:hover': {
@@ -582,10 +594,6 @@ export const toggleButtonOverrides: Components['MuiToggleButton'] = {
 
         // To prevent MUI global opacity dimming
         opacity: 1,
-
-        '& .MuiSvgIcon-root': {
-          color: alpha(cc.ref.palette.grey['00'], 0.38),
-        },
       },
 
       /* -------------- Selected ------------------  */
@@ -593,10 +601,6 @@ export const toggleButtonOverrides: Components['MuiToggleButton'] = {
         backgroundColor: alpha(cc.ref.palette.grey['00'], 0.16),
         borderColor: alpha(cc.ref.palette.grey['00'], 0.12),
         color: cc.ref.palette.grey['00'],
-
-        '& .MuiSvgIcon-root': {
-          color: cc.ref.palette.grey['00'],
-        },
       },
 
       // Final_Hover_colour = active_state_clr + hover_overlay_colour
