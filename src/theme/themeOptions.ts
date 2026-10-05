@@ -26,6 +26,8 @@ import {
   toggleButtonOverrides,
   linkStyleOverrides,
   breadcrumbsStyleOverrides,
+  iconStyleOverrides,
+  svgIconStyleOverrides,
 } from './styleOverrides';
 
 const { cc } = tokens;

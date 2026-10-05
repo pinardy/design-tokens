@@ -1,6 +1,6 @@
 // src/stories/ButtonTokens.stories.tsx
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
