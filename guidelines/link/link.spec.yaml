@@ -1,0 +1,88 @@
+# Link: design guideline spec
+#
+# This file is the source for the Guidelines/Link page in Storybook. It replaces the colour and
+# font tables on the Confluence "Link" page. Edit it directly (the GitHub web editor is fine);
+# see guidelines/README.md for the field reference.
+#
+# `value` is the expected DARK-mode colour, written the same way as on Confluence:
+#   cc.ref.palette.cyan.400               (cyan400 also works)
+#   alpha(cc.ref.palette.grey.00, 0.56)
+#   #00DCFF
+# Storybook resolves each value from src/theme/tokens.jsonc. It flags tokens that don't exist,
+# tokens whose value disagrees with the spec, and components that render a different colour.
+
+component: Link
+muiComponent: MuiLink
+status: draft
+source: Migrated from the Confluence "Link" page (October 2026).
+summary: >-
+  Links take people to another page or section. Use Primary for standalone links that should
+  stand out. Use Inherit for links inside running text, where the link takes the colour of the
+  surrounding text.
+
+config:
+  Size: Default
+
+font:
+  token: cc.sem.font.action
+  description: Font of link content
+
+matrix:
+  states: [enabled, hovered, focused]
+  columns:
+    prop: underline
+    label: Underline
+    values:
+      # Confluence marks "Always*" with an asterisk, which we read as the default.
+      # The theme currently defaults to underline="hover". Design to confirm which is right.
+      - { label: Always, value: always, default: true }
+      - { label: On hover, value: hover }
+      - { label: None, value: none }
+
+variants:
+  - id: primary
+    label: Primary
+    default: true
+    props: { color: primary }
+    guidance: Use for primary links. Add an underline for hovered states.
+    states:
+      enabled:
+        - part: text
+          token: cc.sem.colour.primarylink
+          uiKit: Primary/main
+          value: cc.ref.palette.cyan.400
+          description: Use for primary links. Add an underline for hovered states.
+      focused:
+        - part: text
+          token: cc.sem.colour.primarylink
+          uiKit: Primary/main
+          value: cc.ref.palette.cyan.400
+          description: Use for primary links.
+        - part: focusRing
+          token: cc.sem.colour.border.focusedlink
+          uiKit: Primary/dark
+          value: cc.ref.palette.cyan.600
+          description: Used for link borders when in focused mode.
+
+  - id: inherit
+    label: Inherit
+    props: { color: inherit }
+    guidance: Use for secondary links. Add an underline for hovered states.
+    states:
+      enabled:
+        - part: text
+          token: cc.sem.colour.secondarylink
+          uiKit: Text/primary
+          value: cc.ref.palette.grey.00
+          description: Use for secondary links. Add an underline for hovered states.
+      focused:
+        - part: text
+          token: cc.sem.colour.secondarylink
+          uiKit: Text/primary
+          value: cc.ref.palette.grey.00
+          description: Use for secondary links.
+        - part: focusRing
+          token: cc.sem.colour.border.focusedlink
+          uiKit: Primary/dark
+          value: cc.ref.palette.cyan.600
+          description: Used for link borders when in focused mode.

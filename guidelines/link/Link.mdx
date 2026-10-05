@@ -1,0 +1,57 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import Link from '@mui/material/Link';
+
+import * as LinkStories from './Link.stories';
+import { linkSpec, linkBaseProps } from './spec';
+import { StateMatrix } from '../_blocks/StateMatrix';
+import { TokenTable, SpecSummary } from '../_blocks/TokenTable';
+import { Callout } from '../_blocks/live';
+
+<Meta of={LinkStories} />
+
+# Link
+
+<SpecSummary loaded={linkSpec} />
+
+## States
+
+<StateMatrix loaded={linkSpec} component={Link} baseProps={linkBaseProps} />
+
+## Try it
+
+Hover the link and tab to it to see the real hover and focus states.
+
+<Canvas of={LinkStories.Playground} />
+<Controls of={LinkStories.Playground} />
+
+### Inside running text
+
+<Canvas of={LinkStories.InRunningText} />
+
+## Colour
+
+These tables are generated from `guidelines/link/link.spec.yaml`. Each row is checked three ways:
+
+- **Dark value (spec):** the colour the design specifies, resolved from `src/theme/tokens.jsonc`.
+- **Token check:** whether the named semantic token exists and holds that colour.
+- **Rendered:** the colour the real component draws in that state, measured in this page.
+
+<TokenTable loaded={linkSpec} component={Link} baseProps={linkBaseProps} />
+
+## Light mode
+
+<Callout tone="info" title="Light mode is not specified yet">
+  The spec only defines dark values. This is what the current light theme renders.
+</Callout>
+
+<StateMatrix
+  loaded={linkSpec}
+  component={Link}
+  baseProps={linkBaseProps}
+  mode="light"
+  showChecks={false}
+/>
+
+---
+
+**Edit this page:** change [`guidelines/link/link.spec.yaml`](https://github.com/pinardy/design-tokens/blob/main/guidelines/link/link.spec.yaml) for tokens and states, or [`guidelines/link/Link.mdx`](https://github.com/pinardy/design-tokens/blob/main/guidelines/link/Link.mdx) for the writing. See [`guidelines/README.md`](https://github.com/pinardy/design-tokens/blob/main/guidelines/README.md) for how.

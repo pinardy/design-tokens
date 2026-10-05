@@ -30,7 +30,7 @@ Style overrides should prefer semantic (`cc.sem`) tokens; opacity variants are p
 ## Theme architecture
 
 - `src/theme/styleOverrides.ts` — one exported `Components['MuiX']` override object per MUI component. This is where all component styling lives.
-- `src/theme/themeOptions.ts` — assembles `lightThemeOptions` and `darkThemeOptions` (palette + typography + the full `components` registry). **Adding a new component override requires three edits**: export it from `styleOverrides.ts`, then register it in the `components` map of *both* the light and dark theme objects.
+- `src/theme/themeOptions.ts` — assembles `lightThemeOptions` and `darkThemeOptions` (palette + typography + the full `components` registry). **Adding a new component override requires three edits**: export it from `styleOverrides.ts`, then register it in the `components` map of _both_ the light and dark theme objects.
 - `src/types/mui-component-override.ts` — TypeScript module augmentation declaring custom palette colors (e.g. `violet`, `danger`) on MUI component props. Consuming projects opt in with `import 'design-tokens/mui-component-override';`.
 
 Because overrides are applied globally through the theme, scope them to the owning component — e.g. the dialog backdrop is styled via `MuiDialog`'s slot rather than a global `MuiBackdrop` override, which previously leaked into Select/Menu/Tooltip (see commit 5791098).
@@ -38,3 +38,12 @@ Because overrides are applied globally through the theme, scope them to the owni
 ## Storybook conventions
 
 Stories live in `src/stories/*.stories.tsx`. Each story builds its own theme with `createTheme(lightThemeOptions | darkThemeOptions)` driven by a `themeMode` radio control, wrapping its content in a `ThemeProvider`. The global decorator in `.storybook/preview.tsx` applies the dark theme with a black background by default.
+
+## Design guidelines (prototype)
+
+`guidelines/<component>/` holds component guidelines migrated from Confluence, rendered by Storybook under **Guidelines/**. `<component>.spec.yaml` is the structured source for the token tables and the state grid; `<Component>.mdx` is the page. Blocks in `guidelines/_blocks/` render the real themed MUI component (hover and focus forced with `storybook-addon-pseudo-states`) and check each row against `tokens.ts` and the rendered colour. `guidelines/_lib/spec.ts` has no runtime imports, so it is shared with `scripts/check-guidelines.ts`, which Node runs directly with type stripping.
+
+- `npm run check:guidelines` — validate specs against tokens (`--strict` also fails on missing tokens)
+- `npm run typecheck` — typecheck the library (`tsconfig.app.json`) and the guidelines and scripts (`tsconfig.guidelines.json`)
+
+`guidelines/` is outside `src/`, so none of it is compiled into `dist/`.
