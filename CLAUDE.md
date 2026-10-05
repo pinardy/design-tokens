@@ -16,6 +16,8 @@ An npm library package (`design-tokens`) that turns design tokens into a Materia
 
 There are no tests.
 
+Storybook is deployed to GitHub Pages from the `gh-pages` branch: `.github/workflows/storybook.yml` publishes `main` to the site root, and `.github/workflows/storybook-preview.yml` publishes each same-repo PR to `pr-preview/pr-<number>/` and comments the link. Don't change `clean-exclude: pr-preview/` in the main deploy, or every push to `main` will delete the open previews.
+
 ## Token pipeline
 
 `src/theme/tokens.jsonc` is the single source of truth, shared between developers and UX designers. Style-dictionary (configured in `src/theme/style-dictionary.config.jsonc`, custom format registered in `src/theme/build-tokens.ts`) transforms it into `src/theme/tokens.ts` — a generated file; never edit it by hand, edit `tokens.jsonc` and rerun `npm run build:tokens`.

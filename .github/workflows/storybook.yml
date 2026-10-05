@@ -1,0 +1,67 @@
+# Publishes Storybook from main to the root of GitHub Pages:
+# https://<owner>.github.io/<repo>/
+# PR previews live under pr-preview/ on the same branch (see storybook-preview.yml) and are kept.
+name: Storybook
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build-storybook -- --output-dir storybook-static
+        env:
+          STORYBOOK_DISABLE_TELEMETRY: 1
+
+      # Serve files as-is: Jekyll would drop any file or folder starting with "_".
+      - run: touch storybook-static/.nojekyll
+
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: storybook-static
+          path: storybook-static
+          include-hidden-files: true
+          retention-days: 1
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: storybook-pages-main
+      cancel-in-progress: false
+    permissions:
+      contents: write # push to gh-pages
+    steps:
+      # The deploy actions push from a git checkout; no PR code runs in this job.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: storybook-static
+          path: storybook-static
+
+      - uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4.9.0
+        with:
+          folder: storybook-static
+          branch: gh-pages
+          clean-exclude: pr-preview/
+          force: false
