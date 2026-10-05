@@ -4,6 +4,7 @@
 
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
+- [Storybook Site and PR Previews](#storybook-site-and-pr-previews)
 - [Developing Design Tokens](#developing-design-tokens)
 - [Interaction Overview](#interaction-overview)
 - [Material UI Theme Integration](#material-ui-theme-integration)
@@ -21,6 +22,19 @@ In this project, [style-dictionary](https://styledictionary.com/getting-started/
 1. Install project dependencies with `npm i`.
 
 2. Run the storybook to view the MUI components using design tokens with `npm run storybook`.
+
+## Storybook Site and PR Previews
+
+Storybook is published to GitHub Pages:
+
+- **main:** https://pinardy.github.io/design-tokens/ (deployed by `.github/workflows/storybook.yml` on every push to `main`)
+- **Pull requests:** `https://pinardy.github.io/design-tokens/pr-preview/pr-<number>/` (deployed by `.github/workflows/storybook-preview.yml`)
+
+Each pull request gets a comment linking to its preview, updated on every push. Reviewers, including designers, can check the rendered components and guidelines without running anything locally. The preview is removed when the pull request is closed. The link can work a minute or two after the comment appears, while Pages finishes publishing.
+
+Pull requests from forks don't get previews, because their workflow token can't push to `gh-pages`.
+
+**One-time setup (repository admin):** after the first deploy creates the `gh-pages` branch, go to **Settings → Pages → Build and deployment**, set **Source** to **Deploy from a branch**, and choose `gh-pages` and `/ (root)`.
 
 ## Developing Design Tokens
 
